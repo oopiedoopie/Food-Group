@@ -4,7 +4,10 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import "Alamofire.h"
+#import <ParseUI/ParseUI.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import "ProgressHUD.h"
 #import "APAddressBook.h"
 #import "APContact.h"

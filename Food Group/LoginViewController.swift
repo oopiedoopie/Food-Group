@@ -54,15 +54,25 @@ class LoginViewController: UITableViewController, UITextFieldDelegate {
         let password = passwordField.text
         
         if count(email) == 0 {
-         ProgressHUD.showError("Email field is empty.")
+            ProgressHUD.showError("Email field is empty.")
             return
         } else {
-           ProgressHUD.showError("Password field is empty.")
+            ProgressHUD.showError("Password field is empty.")
         }
         
-         ProgressHUD.show("Signing in...", interaction: true)
+        ProgressHUD.show("Signing in...", interaction: true)
         
-        PFUser.logInWithUsernameInBackground(email, password: password)
-        println(PFUser.currentUser()?.username)
+        PFUser.logInWithUsernameInBackground(emailField.text, password: passwordField.text) {
+            (user: PFUser?, error: NSError?) -> Void in
+            if error == nil {
+                PushNotication.parsePushUserAssign()
+                ProgressHUD.showSuccess("User logged in")
+                self.dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                if let info = error!.userInfo {
+                    ProgressHUD.showError(info["error"] as! String)
+                }
+            }
+        }
     }
 }

@@ -10,7 +10,7 @@
         <scene sceneID="djr-l6-LdR">
             <objects>
                 <tableViewController title="Register" id="bok-3J-kj1" customClass="RegisterViewController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uvs-La-vrw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uvs-La-vrw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,18 +36,18 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Gif-0Z-gh9" firstAttribute="centerX" secondItem="e0f-Tx-0me" secondAttribute="centerX" id="6na-zq-7Zv"/>
-                                                <constraint firstItem="Gif-0Z-gh9" firstAttribute="leading" secondItem="e0f-Tx-0me" secondAttribute="leadingMargin" constant="-7" id="WXO-dG-EFV"/>
-                                                <constraint firstItem="Gif-0Z-gh9" firstAttribute="top" secondItem="e0f-Tx-0me" secondAttribute="topMargin" constant="-1" id="jF1-Wb-3TY"/>
+                                                <constraint firstItem="Gif-0Z-gh9" firstAttribute="leading" secondItem="e0f-Tx-0me" secondAttribute="leadingMargin" constant="22" id="8JS-SH-cvR"/>
+                                                <constraint firstItem="Gif-0Z-gh9" firstAttribute="centerX" secondItem="e0f-Tx-0me" secondAttribute="centerX" id="B5K-vX-ZvY"/>
+                                                <constraint firstItem="Gif-0Z-gh9" firstAttribute="centerY" secondItem="e0f-Tx-0me" secondAttribute="centerY" id="mgq-eg-bkW"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Gif-0Z-gh9"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="6na-zq-7Zv"/>
-                                                    <exclude reference="WXO-dG-EFV"/>
-                                                    <exclude reference="jF1-Wb-3TY"/>
+                                                    <exclude reference="8JS-SH-cvR"/>
+                                                    <exclude reference="B5K-vX-ZvY"/>
+                                                    <exclude reference="mgq-eg-bkW"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -55,9 +55,9 @@
                                                     <include reference="Gif-0Z-gh9"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="6na-zq-7Zv"/>
-                                                    <include reference="WXO-dG-EFV"/>
-                                                    <include reference="jF1-Wb-3TY"/>
+                                                    <include reference="8JS-SH-cvR"/>
+                                                    <include reference="B5K-vX-ZvY"/>
+                                                    <include reference="mgq-eg-bkW"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -75,18 +75,18 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Ejr-wb-HDO" firstAttribute="centerX" secondItem="rb4-WJ-s8e" secondAttribute="centerX" id="CrN-E4-YAu"/>
-                                                <constraint firstItem="Ejr-wb-HDO" firstAttribute="leading" secondItem="rb4-WJ-s8e" secondAttribute="leadingMargin" constant="-7" id="L3A-e2-QTg"/>
-                                                <constraint firstItem="Ejr-wb-HDO" firstAttribute="top" secondItem="rb4-WJ-s8e" secondAttribute="topMargin" constant="-1" id="gAt-wG-4pb"/>
+                                                <constraint firstItem="Ejr-wb-HDO" firstAttribute="centerY" secondItem="rb4-WJ-s8e" secondAttribute="centerY" id="Cha-WF-rdq"/>
+                                                <constraint firstItem="Ejr-wb-HDO" firstAttribute="leading" secondItem="rb4-WJ-s8e" secondAttribute="leadingMargin" constant="23" id="l3o-Nu-Nky"/>
+                                                <constraint firstItem="Ejr-wb-HDO" firstAttribute="centerX" secondItem="rb4-WJ-s8e" secondAttribute="centerX" id="wjG-dq-bOL"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="Ejr-wb-HDO"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="CrN-E4-YAu"/>
-                                                    <exclude reference="L3A-e2-QTg"/>
-                                                    <exclude reference="gAt-wG-4pb"/>
+                                                    <exclude reference="Cha-WF-rdq"/>
+                                                    <exclude reference="l3o-Nu-Nky"/>
+                                                    <exclude reference="wjG-dq-bOL"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -94,9 +94,9 @@
                                                     <include reference="Ejr-wb-HDO"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="CrN-E4-YAu"/>
-                                                    <include reference="L3A-e2-QTg"/>
-                                                    <include reference="gAt-wG-4pb"/>
+                                                    <include reference="Cha-WF-rdq"/>
+                                                    <include reference="l3o-Nu-Nky"/>
+                                                    <include reference="wjG-dq-bOL"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -114,18 +114,18 @@
                                                 </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VNO-6u-GcJ" firstAttribute="top" secondItem="bqJ-ob-NRB" secondAttribute="topMargin" constant="-1" id="01d-hg-8Nj"/>
-                                                <constraint firstItem="VNO-6u-GcJ" firstAttribute="centerX" secondItem="bqJ-ob-NRB" secondAttribute="centerX" id="SsW-Hr-ils"/>
-                                                <constraint firstItem="VNO-6u-GcJ" firstAttribute="leading" secondItem="bqJ-ob-NRB" secondAttribute="leadingMargin" constant="-7" id="ZrU-Yc-QnP"/>
+                                                <constraint firstItem="VNO-6u-GcJ" firstAttribute="centerY" secondItem="bqJ-ob-NRB" secondAttribute="centerY" id="3Iq-aW-4h5"/>
+                                                <constraint firstItem="VNO-6u-GcJ" firstAttribute="leading" secondItem="bqJ-ob-NRB" secondAttribute="leadingMargin" constant="23" id="MxS-jA-4vV"/>
+                                                <constraint firstItem="VNO-6u-GcJ" firstAttribute="centerX" secondItem="bqJ-ob-NRB" secondAttribute="centerX" id="zkm-5d-xM6"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="VNO-6u-GcJ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="01d-hg-8Nj"/>
-                                                    <exclude reference="SsW-Hr-ils"/>
-                                                    <exclude reference="ZrU-Yc-QnP"/>
+                                                    <exclude reference="3Iq-aW-4h5"/>
+                                                    <exclude reference="MxS-jA-4vV"/>
+                                                    <exclude reference="zkm-5d-xM6"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -133,9 +133,9 @@
                                                     <include reference="VNO-6u-GcJ"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="01d-hg-8Nj"/>
-                                                    <include reference="SsW-Hr-ils"/>
-                                                    <include reference="ZrU-Yc-QnP"/>
+                                                    <include reference="3Iq-aW-4h5"/>
+                                                    <include reference="MxS-jA-4vV"/>
+                                                    <include reference="zkm-5d-xM6"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -157,16 +157,16 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="leading" secondItem="z4Z-Pc-w9x" secondAttribute="leading" constant="177" id="WbH-z3-XTZ"/>
-                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="top" secondItem="z4Z-Pc-w9x" secondAttribute="topMargin" constant="-1" id="hf0-VH-e43"/>
+                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="centerX" secondItem="z4Z-Pc-w9x" secondAttribute="centerX" id="7YJ-Ws-kJj"/>
+                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="bottom" secondItem="z4Z-Pc-w9x" secondAttribute="bottomMargin" id="Cws-5I-bat"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="gt1-Tr-4Mw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="WbH-z3-XTZ"/>
-                                                    <exclude reference="hf0-VH-e43"/>
+                                                    <exclude reference="7YJ-Ws-kJj"/>
+                                                    <exclude reference="Cws-5I-bat"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -174,8 +174,51 @@
                                                     <include reference="gt1-Tr-4Mw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="WbH-z3-XTZ"/>
-                                                    <include reference="hf0-VH-e43"/>
+                                                    <include reference="7YJ-Ws-kJj"/>
+                                                    <include reference="Cws-5I-bat"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="peE-oZ-F5a">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="peE-oZ-F5a" id="jQi-jY-cuR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adf-Gs-MB3">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" title="Log in with existing account">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <segue destination="MJv-pa-LCw" kind="show" id="qpc-RZ-Gug"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="adf-Gs-MB3" firstAttribute="centerY" secondItem="jQi-jY-cuR" secondAttribute="centerY" id="Hah-Sf-LOA"/>
+                                                <constraint firstItem="adf-Gs-MB3" firstAttribute="leading" secondItem="jQi-jY-cuR" secondAttribute="leadingMargin" constant="45" id="dfr-Nt-akh"/>
+                                                <constraint firstItem="adf-Gs-MB3" firstAttribute="centerX" secondItem="jQi-jY-cuR" secondAttribute="centerX" id="zIA-xH-G8A"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="adf-Gs-MB3"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="Hah-Sf-LOA"/>
+                                                    <exclude reference="dfr-Nt-akh"/>
+                                                    <exclude reference="zIA-xH-G8A"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="adf-Gs-MB3"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="Hah-Sf-LOA"/>
+                                                    <include reference="dfr-Nt-akh"/>
+                                                    <include reference="zIA-xH-G8A"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -202,7 +245,7 @@
         <scene sceneID="LD2-M7-xHP">
             <objects>
                 <tableViewController title="Log in" id="MJv-pa-LCw" customClass="LoginViewController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tYP-e2-m77">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="tYP-e2-m77">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -221,15 +264,31 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BdT-5i-E0S" id="QNj-5g-Fgw">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-zC-mB4">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aci-zC-mB4">
                                                     <rect key="frame" x="8" y="5" width="361" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="5" width="384" height="30"/>
-                                                    </variation>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Aci-zC-mB4" firstAttribute="leading" secondItem="QNj-5g-Fgw" secondAttribute="leadingMargin" constant="35" id="65C-6A-MCf"/>
+                                                <constraint firstItem="Aci-zC-mB4" firstAttribute="top" secondItem="QNj-5g-Fgw" secondAttribute="topMargin" constant="-1" id="EWo-V0-8yv"/>
+                                                <constraint firstItem="Aci-zC-mB4" firstAttribute="centerX" secondItem="QNj-5g-Fgw" secondAttribute="centerX" id="mh6-l4-GDt"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="65C-6A-MCf"/>
+                                                    <exclude reference="EWo-V0-8yv"/>
+                                                    <exclude reference="mh6-l4-GDt"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="65C-6A-MCf"/>
+                                                    <include reference="EWo-V0-8yv"/>
+                                                    <include reference="mh6-l4-GDt"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="passwordCell" id="jVs-nT-qsg">
@@ -238,15 +297,31 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jVs-nT-qsg" id="jtp-f2-kCF">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4J-Sz-sLP">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4J-Sz-sLP">
                                                     <rect key="frame" x="8" y="5" width="364" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="5" width="384" height="30"/>
-                                                    </variation>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="l4J-Sz-sLP" firstAttribute="centerX" secondItem="jtp-f2-kCF" secondAttribute="centerX" id="RPA-94-Gj1"/>
+                                                <constraint firstItem="l4J-Sz-sLP" firstAttribute="centerY" secondItem="jtp-f2-kCF" secondAttribute="centerY" id="lRK-Xu-hYZ"/>
+                                                <constraint firstItem="l4J-Sz-sLP" firstAttribute="leading" secondItem="jtp-f2-kCF" secondAttribute="leadingMargin" constant="35" id="tGB-ot-Z9Y"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="RPA-94-Gj1"/>
+                                                    <exclude reference="lRK-Xu-hYZ"/>
+                                                    <exclude reference="tGB-ot-Z9Y"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="RPA-94-Gj1"/>
+                                                    <include reference="lRK-Xu-hYZ"/>
+                                                    <include reference="tGB-ot-Z9Y"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buttonCell" id="Qal-5b-A39">
@@ -258,19 +333,19 @@
                                                 <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2g-tl-q7y">
                                                     <rect key="frame" x="233" y="7" width="76" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="76" id="1vO-JO-9Se"/>
+                                                        <constraint firstAttribute="width" constant="76" id="H9x-mQ-Hwp"/>
                                                     </constraints>
                                                     <state key="normal" title="Log In">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="1vO-JO-9Se"/>
+                                                            <exclude reference="H9x-mQ-Hwp"/>
                                                         </mask>
                                                     </variation>
                                                     <variation key="widthClass=compact">
                                                         <mask key="constraints">
-                                                            <include reference="1vO-JO-9Se"/>
+                                                            <include reference="H9x-mQ-Hwp"/>
                                                         </mask>
                                                     </variation>
                                                     <connections>
@@ -279,19 +354,19 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="E2g-tl-q7y" firstAttribute="bottom" secondItem="O8h-GT-gZT" secondAttribute="bottomMargin" id="LuX-C2-bGz"/>
-                                                <constraint firstItem="E2g-tl-q7y" firstAttribute="centerX" secondItem="O8h-GT-gZT" secondAttribute="centerX" id="pV9-iw-XK5"/>
+                                                <constraint firstItem="E2g-tl-q7y" firstAttribute="centerX" secondItem="O8h-GT-gZT" secondAttribute="centerX" id="1Hm-r8-eKk"/>
+                                                <constraint firstItem="E2g-tl-q7y" firstAttribute="top" secondItem="O8h-GT-gZT" secondAttribute="topMargin" constant="-3" id="Goo-Da-IUq"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="LuX-C2-bGz"/>
-                                                    <exclude reference="pV9-iw-XK5"/>
+                                                    <exclude reference="1Hm-r8-eKk"/>
+                                                    <exclude reference="Goo-Da-IUq"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
                                                 <mask key="constraints">
-                                                    <include reference="LuX-C2-bGz"/>
-                                                    <include reference="pV9-iw-XK5"/>
+                                                    <include reference="1Hm-r8-eKk"/>
+                                                    <include reference="Goo-Da-IUq"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -311,7 +386,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njK-9T-4xB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661.5" y="-9"/>
+            <point key="canvasLocation" x="978" y="-9"/>
         </scene>
     </scenes>
 </document>
