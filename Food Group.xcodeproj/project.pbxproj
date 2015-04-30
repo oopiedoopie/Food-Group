@@ -563,7 +563,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ericcauble/Documents/SDK/parse-library-1.7.1",
 					"/Users/ericcauble/Downloads/parse-library-1.7.2",
 				);
 				INFOPLIST_FILE = "Food Group/Info.plist";
@@ -582,7 +581,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/ericcauble/Documents/SDK/parse-library-1.7.1",
 					"/Users/ericcauble/Downloads/parse-library-1.7.2",
 				);
 				INFOPLIST_FILE = "Food Group/Info.plist";
