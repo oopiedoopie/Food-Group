@@ -20,16 +20,15 @@ class WelcomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     @IBAction func facebookLogin(sender: UIButton) {
         ProgressHUD.show("Signing in...", interaction: false)
-        
-        PFFacebookUtils.logInInBackgroundWithReadPermissions(["public_profile", "email", "user_friends"], block: {
-            (user: PFUser?, error: NSError?) -> Void in
-             if user != nil {
-                if user?[PF_USER_FACEBOOKID] == nil {
-                    self.requestFacebook(user!)
+        PFFacebookUtils.logInWithPermissions(["public_profile", "email", "user_friends"], block: { (user, error) -> Void in
+            if (user != nil) {
+                if let user = PFUser.currentUser(){
+                    self.requestFacebook(user)
                 } else {
                     self.userLoggedIn(user!)
                 }

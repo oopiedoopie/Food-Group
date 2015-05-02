@@ -6,9 +6,7 @@
 #import <Foundation/Foundation.h>
 #import <ParseUI/ParseUI.h>
 #import <FacebookSDK/FacebookSDK.h>
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
-#import <ParseFacebookUtilsV4/PFFacebookUtils.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
 #import "ProgressHUD.h"
 #import "APAddressBook.h"
 #import "APContact.h"
