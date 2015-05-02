@@ -45,11 +45,11 @@ class Camera {
         
         cameraUI.allowsEditing = canEdit
         cameraUI.showsCameraControls = true
-        if target is ChatViewController {
-            cameraUI.delegate = target as! ChatViewController
-        } else if target is ProfileViewController {
-            cameraUI.delegate = target as! ProfileViewController
-        }
+//        if target is ChatViewController {
+//            cameraUI.delegate = target as! ChatViewController
+//        } else if target is ProfileViewController {
+//            cameraUI.delegate = target as! ProfileViewController
+//        }
         target.presentViewController(cameraUI, animated: true, completion: nil)
         
         return true
@@ -76,11 +76,11 @@ class Camera {
         }
         
         imagePicker.allowsEditing = canEdit
-        if target is ChatViewController {
-            imagePicker.delegate = target as! ChatViewController
-        } else if target is ProfileViewController {
-            imagePicker.delegate = target as! ProfileViewController
-        }
+//        if target is ChatViewController {
+//            imagePicker.delegate = target as! ChatViewController
+//        } else if target is ProfileViewController {
+//            imagePicker.delegate = target as! ProfileViewController
+//        }
         target.presentViewController(imagePicker, animated: true, completion: nil)
         
         return true
@@ -107,7 +107,7 @@ class Camera {
         }
         
         imagePicker.allowsEditing = canEdit
-        imagePicker.delegate = target as! ChatViewController
+       // imagePicker.delegate = target as! ChatViewController
         target.presentViewController(imagePicker, animated: true, completion: nil)
         
         return true
