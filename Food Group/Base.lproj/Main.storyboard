@@ -1,11 +1,161 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bok-3J-kj1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sly-US-jUj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="5Ze-iS-3WC">
+            <objects>
+                <viewController id="Sly-US-jUj" customClass="WelcomeViewController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qwK-Q9-U7A"/>
+                        <viewControllerLayoutGuide type="bottom" id="UlN-z3-oxl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aQi-09-Sot">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OaK-kG-Hy9">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Facebook Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="145" y="97" width="111" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="facebookLogin:" destination="Sly-US-jUj" eventType="touchUpInside" id="enj-MF-woK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kP-vs-hMo">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="203" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="6gP-Ds-BEI" kind="show" id="QRg-X7-17C"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="OaK-kG-Hy9"/>
+                                <exclude reference="6kP-vs-hMo"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="OaK-kG-Hy9"/>
+                                <include reference="6kP-vs-hMo"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AwG-im-XL3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-51" y="-686"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="e3z-VN-zRf">
+            <objects>
+                <viewController id="6gP-Ds-BEI" customClass="ProfileViewController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ap8-be-7ad"/>
+                        <viewControllerLayoutGuide type="bottom" id="1xe-4M-1YW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iP7-PI-mx0">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aWa-ES-iVO">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="vOC-RC-m0a"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="vOC-RC-m0a"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="vOC-RC-m0a"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2r-SZ-jkO">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AYv-rW-Tf0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="log out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="420" width="48" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="logOutUser:" destination="6gP-Ds-BEI" eventType="touchUpInside" id="Ueq-t3-eaG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B2r-SZ-jkO" firstAttribute="top" secondItem="aWa-ES-iVO" secondAttribute="bottom" constant="26" id="8ml-Fp-egu"/>
+                            <constraint firstItem="B2r-SZ-jkO" firstAttribute="centerX" secondItem="aWa-ES-iVO" secondAttribute="centerX" id="GAY-ZH-YYS"/>
+                            <constraint firstItem="aWa-ES-iVO" firstAttribute="centerX" secondItem="iP7-PI-mx0" secondAttribute="centerX" id="Idz-1v-kde"/>
+                            <constraint firstItem="aWa-ES-iVO" firstAttribute="top" secondItem="ap8-be-7ad" secondAttribute="bottom" constant="110" id="ORN-oN-MFr"/>
+                            <constraint firstItem="B2r-SZ-jkO" firstAttribute="leading" secondItem="iP7-PI-mx0" secondAttribute="leadingMargin" constant="87" id="TZd-T4-D5s"/>
+                            <constraint firstItem="1xe-4M-1YW" firstAttribute="top" secondItem="aWa-ES-iVO" secondAttribute="bottom" constant="366" id="zen-7o-zau"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="aWa-ES-iVO"/>
+                                <exclude reference="B2r-SZ-jkO"/>
+                                <exclude reference="AYv-rW-Tf0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Idz-1v-kde"/>
+                                <exclude reference="ORN-oN-MFr"/>
+                                <exclude reference="8ml-Fp-egu"/>
+                                <exclude reference="GAY-ZH-YYS"/>
+                                <exclude reference="TZd-T4-D5s"/>
+                                <exclude reference="zen-7o-zau"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="aWa-ES-iVO"/>
+                                <include reference="B2r-SZ-jkO"/>
+                                <include reference="AYv-rW-Tf0"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Idz-1v-kde"/>
+                                <include reference="ORN-oN-MFr"/>
+                                <include reference="8ml-Fp-egu"/>
+                                <include reference="GAY-ZH-YYS"/>
+                                <include reference="TZd-T4-D5s"/>
+                                <include reference="zen-7o-zau"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="B2r-SZ-jkO" id="37Y-Wa-PlT"/>
+                        <outlet property="userImage" destination="aWa-ES-iVO" id="A6X-Pa-yB5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uE2-mv-dgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772.5" y="-686"/>
+        </scene>
         <!--Register-->
         <scene sceneID="djr-l6-LdR">
             <objects>
@@ -13,7 +163,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uvs-La-vrw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="8QM-cT-ygD">
                                 <cells>
@@ -22,6 +172,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUI-Gu-ipH" id="NmM-qI-NCK">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="95Y-eU-sDa">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -31,6 +182,8 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gif-0Z-gh9">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.94085192679999996" green="0.94903725390000004" blue="0.95307987930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -61,6 +214,8 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.94085192679999996" green="0.94903725390000004" blue="0.95307987930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="e3X-hA-HwE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -70,6 +225,8 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ejr-wb-HDO">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.94085192679999996" green="0.94903725390000004" blue="0.95307987930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -100,6 +257,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="zBa-UO-qsc">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -109,6 +267,8 @@
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNO-6u-GcJ">
                                                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.94085192679999996" green="0.94903725390000004" blue="0.95307987930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -139,6 +299,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="72V-Tb-OIf">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -148,25 +309,40 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt1-Tr-4Mw">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <color key="backgroundColor" red="0.94085192679999996" green="0.94903725390000004" blue="0.95307987930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="wgH-aZ-30T"/>
+                                                    </constraints>
                                                     <state key="normal" title="Register">
+                                                        <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="wgH-aZ-30T"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="wgH-aZ-30T"/>
+                                                        </mask>
+                                                    </variation>
                                                     <connections>
                                                         <action selector="registerButtonPressed:" destination="bok-3J-kj1" eventType="touchUpInside" id="dZw-gj-j3n"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="centerX" secondItem="z4Z-Pc-w9x" secondAttribute="centerX" id="7YJ-Ws-kJj"/>
-                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="bottom" secondItem="z4Z-Pc-w9x" secondAttribute="bottomMargin" id="Cws-5I-bat"/>
+                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="centerY" secondItem="z4Z-Pc-w9x" secondAttribute="centerY" id="Bv4-SK-523"/>
+                                                <constraint firstItem="gt1-Tr-4Mw" firstAttribute="centerX" secondItem="z4Z-Pc-w9x" secondAttribute="centerX" id="kSI-KH-IRM"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="subviews">
                                                     <exclude reference="gt1-Tr-4Mw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="7YJ-Ws-kJj"/>
-                                                    <exclude reference="Cws-5I-bat"/>
+                                                    <exclude reference="Bv4-SK-523"/>
+                                                    <exclude reference="kSI-KH-IRM"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -174,11 +350,13 @@
                                                     <include reference="gt1-Tr-4Mw"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="7YJ-Ws-kJj"/>
-                                                    <include reference="Cws-5I-bat"/>
+                                                    <include reference="Bv4-SK-523"/>
+                                                    <include reference="kSI-KH-IRM"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="peE-oZ-F5a">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -188,7 +366,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adf-Gs-MB3">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <color key="backgroundColor" red="0.94085192679999996" green="0.94903725390000004" blue="0.95307987930000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <state key="normal" title="Log in with existing account">
+                                                        <color key="titleColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -222,6 +402,8 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

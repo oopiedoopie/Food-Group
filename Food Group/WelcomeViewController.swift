@@ -8,13 +8,14 @@
 
 import UIKit
 import Parse
-import Bolts
 import Alamofire
+
 
 class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,7 +122,7 @@ class WelcomeViewController: UIViewController {
     
     func userLoggedIn(user: PFUser) {
         PushNotication.parsePushUserAssign()
-        ProgressHUD.showSuccess("Welcome back, \(user[PF_USER_FULLNAME])!")
+        ProgressHUD.showSuccess("Welcome back, \(user[PF_USER_FULLNAME]!)!")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

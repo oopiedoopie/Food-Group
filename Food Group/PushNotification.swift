@@ -8,7 +8,7 @@
 
 import Foundation
 import Parse
-import Bolts
+
 
 class PushNotication {
     

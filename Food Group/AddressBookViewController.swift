@@ -10,7 +10,7 @@ import UIKit
 import AddressBook
 import MessageUI
 import Parse
-import Bolts
+//import Bolts
 
 protocol AddressBookViewControllerDelegate {
     func didSelectAddressBookUser(user: PFUser)

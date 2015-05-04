@@ -3,6 +3,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Bolts/Bolts.h>
+
 #import <Foundation/Foundation.h>
 #import <ParseUI/ParseUI.h>
 #import <FacebookSDK/FacebookSDK.h>

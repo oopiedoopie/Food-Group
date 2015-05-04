@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+//import Bolts
 import MessageUI
  
 class PrivateViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate {
@@ -163,17 +164,17 @@ class PrivateViewController: UITableViewController, UITableViewDelegate, UITable
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-//        if indexPath.section == 0 {
-//            let user1 = PFUser.currentUser()
-//            let user2 = users2[indexPath.row]
-//            let groupId = Messages.startPrivateChat(user1, user2: user2)
-//            
-//            self.performSegueWithIdentifier("privateChatSegue", sender: groupId)
-//        }
-//        else if indexPath.section == 1 {
-//            self.indexSelected = indexPath
-//            self.inviteUser(self.users1[indexPath.row])
-//        }
+        if indexPath.section == 0 {
+            let user1 = PFUser.currentUser()
+            let user2 = users2[indexPath.row]
+          //  let groupId = Messages.startPrivateChat(user1, user2: user2)
+            
+           // self.performSegueWithIdentifier("privateChatSegue", sender: groupId)
+        }
+        else if indexPath.section == 1 {
+            self.indexSelected = indexPath
+            self.inviteUser(self.users1[indexPath.row])
+        }
     }
     
     // MARK: - Prepare for segue to private chatVC
