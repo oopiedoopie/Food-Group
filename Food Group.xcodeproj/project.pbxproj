@@ -23,7 +23,6 @@
 		A159E1531AF2B1C50026B23A /* APContact.m in Sources */ = {isa = PBXBuildFile; fileRef = A159E14B1AF2B1C50026B23A /* APContact.m */; };
 		A159E1541AF2B1C50026B23A /* APPhoneWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A159E14D1AF2B1C50026B23A /* APPhoneWithLabel.m */; };
 		A159E1551AF2B1C50026B23A /* APSocialProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A159E14F1AF2B1C50026B23A /* APSocialProfile.m */; };
-		A159E1581AF2B31D0026B23A /* FontAwesomeKit in Resources */ = {isa = PBXBuildFile; fileRef = A159E1571AF2B31D0026B23A /* FontAwesomeKit */; };
 		A159E15D1AF2B3450026B23A /* SBGestureTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E1591AF2B3450026B23A /* SBGestureTableView.swift */; };
 		A159E15E1AF2B3450026B23A /* SBGestureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E15A1AF2B3450026B23A /* SBGestureTableViewCell.swift */; };
 		A159E15F1AF2B3450026B23A /* SBGestureTableViewCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E15B1AF2B3450026B23A /* SBGestureTableViewCellAction.swift */; };
@@ -142,7 +141,6 @@
 		A159E14E1AF2B1C50026B23A /* APSocialProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APSocialProfile.h; sourceTree = "<group>"; };
 		A159E14F1AF2B1C50026B23A /* APSocialProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSocialProfile.m; sourceTree = "<group>"; };
 		A159E1501AF2B1C50026B23A /* APTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTypes.h; sourceTree = "<group>"; };
-		A159E1571AF2B31D0026B23A /* FontAwesomeKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FontAwesomeKit; sourceTree = "<group>"; };
 		A159E1591AF2B3450026B23A /* SBGestureTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableView.swift; sourceTree = "<group>"; };
 		A159E15A1AF2B3450026B23A /* SBGestureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCell.swift; sourceTree = "<group>"; };
 		A159E15B1AF2B3450026B23A /* SBGestureTableViewCellAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellAction.swift; sourceTree = "<group>"; };
@@ -369,7 +367,6 @@
 				A159C3461AF530AC00425F8A /* FacebookSDK.framework */,
 				A159C3471AF530AC00425F8A /* FBAudienceNetwork.framework */,
 				A159E1611AF2B34D0026B23A /* SBGestureTableView */,
-				A159E1571AF2B31D0026B23A /* FontAwesomeKit */,
 				A159E1561AF2B1CE0026B23A /* APAddressBook */,
 				A159E1451AF2B0220026B23A /* ProgressHUD */,
 				A15769951AF297B600B2A1AC /* Accounts.framework */,
@@ -528,7 +525,6 @@
 				A186D2231AFAF1EE0089B3DD /* Images.xcassets in Resources */,
 				A19CF24E1AF1FBA80032755C /* Main.storyboard in Resources */,
 				A19CF2531AF1FBA80032755C /* LaunchScreen.xib in Resources */,
-				A159E1581AF2B31D0026B23A /* FontAwesomeKit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
