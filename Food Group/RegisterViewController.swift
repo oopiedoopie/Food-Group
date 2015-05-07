@@ -15,7 +15,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
-    @IBOutlet weak var logInExistingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,15 +61,15 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         let password = passwordField.text.lowercaseString
         
         if count(name) == 0 {
-            ProgressHUD.showError("Name must be set.")
+            ProgressHUD.showError("Name cannot be empty")
             return
         }
         if count(password) == 0 {
-            ProgressHUD.showError("Password must be set.")
+            ProgressHUD.showError("Password cannot be empty")
             return
         }
         if count(email) == 0 {
-            ProgressHUD.showError("Email must be set.")
+            ProgressHUD.showError("Email cannot be empty")
             return
         }
         

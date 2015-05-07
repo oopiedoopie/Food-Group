@@ -34,18 +34,27 @@ class ProfileViewController: UIViewController
     }
     
 
+
+    
+ 
+    @IBAction func logOutUser(sender: AnyObject)
+    {
+        PFUser.logOut()
+        self.userImage.image = UIImage(named: "generic_user")
+        ProgressHUD.showSuccess("You have logged out")
+        nameLabel.text = "Logged out"
+    }
+    
+    
     func loadUserImage(user: PFUser)
     {
-        
-        if let avatarImage:PFFile =  user[PF_USER_THUMBNAIL] as? PFFile
+        if let profileImage:PFFile =  user[PF_USER_THUMBNAIL] as? PFFile
         {
-            avatarImage.getDataInBackgroundWithBlock{(imageData , error)-> Void in
-                
+            profileImage.getDataInBackgroundWithBlock { (imageData , error)-> Void in
                 if !(error != nil)
                 {
                     self.userImage.image = UIImage(data: imageData!)
-                    println(self.userImage.image?.size)
-   
+                    
                 }
                 else
                 {
@@ -54,36 +63,6 @@ class ProfileViewController: UIViewController
             }
         }
     }
-    
-    
- 
-    @IBAction func logOutUser(sender: AnyObject) {
-        PFUser.logOut()
-        self.userImage.image = UIImage(named: "generic_user")
-        nameLabel.text = "Logged out"
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     

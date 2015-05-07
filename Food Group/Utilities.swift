@@ -1,10 +1,4 @@
-//
-//  Utilities.swift
-//  SwiftParseChat
-//
-//  Created by Jesse Hu on 2/20/15.
-//  Copyright (c) 2015 Jesse Hu. All rights reserved.
-//
+ 
 
 import Foundation
 
@@ -12,8 +6,8 @@ class Utilities {
     
     class func loginUser(target: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let welcomeVC = storyboard.instantiateViewControllerWithIdentifier("navigationVC") as! UINavigationController
-        target.presentViewController(welcomeVC, animated: true, completion: nil)
+        let welcomeVC = storyboard.instantiateViewControllerWithIdentifier("RegisterView") as! RegisterViewController
+        target.presentingViewController
         
     }
     

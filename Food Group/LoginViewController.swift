@@ -178,7 +178,9 @@ class LoginViewController: UITableViewController, UITextFieldDelegate {
     func userLoggedIn(user: PFUser) {
         PushNotication.parsePushUserAssign()
         ProgressHUD.showSuccess("Welcome back, \(user[PF_USER_FULLNAME]!)!")
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dispatch_async(dispatch_get_main_queue()) {
+            self.performSegueWithIdentifier("showProfileVC", sender: nil)
+        }
     }
     
 }
