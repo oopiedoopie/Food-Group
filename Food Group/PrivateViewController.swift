@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-//import Bolts
 import MessageUI
  
 class PrivateViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate {

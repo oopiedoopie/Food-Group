@@ -10,7 +10,7 @@ import UIKit
 import AddressBook
 import MessageUI
 import Parse
-//import Bolts
+
 
 protocol AddressBookViewControllerDelegate {
     func didSelectAddressBookUser(user: PFUser)
@@ -29,7 +29,7 @@ class AddressBookViewController: UITableViewController, UIActionSheetDelegate, M
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        definesPresentationContext = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "cleanup", name: NOTIFICATION_USER_LOGGED_OUT, object: nil)
     }
     

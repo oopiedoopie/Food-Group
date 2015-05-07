@@ -15,6 +15,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    @IBOutlet weak var logInExistingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +23,13 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.nameField.delegate = self
         self.emailField.delegate = self
         self.passwordField.delegate = self
+ 
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.nameField.becomeFirstResponder()
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -59,6 +59,8 @@ class ProfileViewController: UIViewController
  
     @IBAction func logOutUser(sender: AnyObject) {
         PFUser.logOut()
+        self.userImage.image = UIImage(named: "generic_user")
+        nameLabel.text = "Logged out"
     }
     
     
