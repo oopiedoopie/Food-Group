@@ -992,7 +992,6 @@
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Fe2-4o-NLy"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="menuButton" destination="Fe2-4o-NLy" id="edk-dx-fYX"/>
                         <outlet property="searchDisplayController" destination="tKa-oy-3xZ" id="WJR-97-dQA"/>
                         <outlet property="tableView" destination="oYx-n2-4xK" id="bXc-yo-NUb"/>
                         <segue destination="jd5-y0-o5s" kind="show" identifier="showDetailVC" id="LHk-1S-PBl"/>
@@ -1008,7 +1007,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2655" y="143"/>
+            <point key="canvasLocation" x="2643" y="201"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="uuh-uV-13a">
