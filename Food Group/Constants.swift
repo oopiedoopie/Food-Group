@@ -1,9 +1,5 @@
 //
 //  Constants.swift
-//  SwiftParseChat
-//
-//  Created by Jesse Hu on 2/20/15.
-//  Copyright (c) 2015 Jesse Hu. All rights reserved.
 //
 
 import Foundation
@@ -21,7 +17,7 @@ struct Constants {
 
 let DEFAULT_TAB							= 0
 
-let MESSAGE_INVITE						= "Check out SwiftParseChat on GitHub: https://github.com/huyouare/SwiftParseChat"
+let MESSAGE_INVITE						= "This is a test message:  Check out Food Group at http://www.oopiedoopie.com/foodgroup"
 
 /* Installation */
 let PF_INSTALLATION_CLASS_NAME			= "_Installation"           //	Class name
