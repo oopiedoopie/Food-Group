@@ -243,11 +243,12 @@
                     <connections>
                         <outlet property="nameLabel" destination="B2r-SZ-jkO" id="37Y-Wa-PlT"/>
                         <outlet property="userImage" destination="aWa-ES-iVO" id="A6X-Pa-yB5"/>
+                        <segue destination="bok-3J-kj1" kind="show" identifier="showLoginVC" id="yuE-DA-hDE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uE2-mv-dgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2662.5" y="-1439"/>
+            <point key="canvasLocation" x="2643" y="-1755"/>
         </scene>
         <!--Register-->
         <scene sceneID="djr-l6-LdR">
@@ -476,7 +477,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.2156862745" green="0.30588235289999999" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.42352941179999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="19" id="tc2-TT-YwI">
@@ -725,7 +726,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TOQ-ly-KBN" id="EmQ-jd-IQX">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.2156862745" green="0.30588235289999999" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.99215686270000003" green="0.42352941179999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buttonCell" rowHeight="19" id="Stf-ci-RDM">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -989,9 +990,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" tag="2" title="Search" image="722-location-pin" id="Opq-hq-jHu"/>
-                    <navigationItem key="navigationItem" title="Search for candidates" id="0xo-vf-OXi">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="Fe2-4o-NLy"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Search for candidates" id="0xo-vf-OXi"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="tKa-oy-3xZ" id="WJR-97-dQA"/>
                         <outlet property="tableView" destination="oYx-n2-4xK" id="bXc-yo-NUb"/>
@@ -1015,6 +1014,7 @@
             <objects>
                 <tableViewController id="jjH-XE-w95" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qju-7f-r8a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1230,9 +1230,9 @@
         <image name="895-user-group" width="29" height="20"/>
         <image name="fb_icon" width="512" height="512"/>
         <image name="generic_user" width="225" height="225"/>
-        <image name="menu" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kkh-4Q-7xA"/>
+        <segue reference="st7-99-FKz"/>
+        <segue reference="yuE-DA-hDE"/>
     </inferredMetricsTieBreakers>
 </document>
