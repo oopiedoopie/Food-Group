@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1216E0F1AFC095900562F97 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1216E0E1AFC095900562F97 /* TabBarController.swift */; };
 		A14C46301AF301F900588B14 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C462F1AF301F900588B14 /* Images.swift */; };
 		A14C46321AF3022300588B14 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C46311AF3022300588B14 /* Camera.swift */; };
 		A14C46341AF3023400588B14 /* AddressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C46331AF3023400588B14 /* AddressBookViewController.swift */; };
@@ -118,6 +119,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A1216E0E1AFC095900562F97 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A14C462F1AF301F900588B14 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		A14C46311AF3022300588B14 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		A14C46331AF3023400588B14 /* AddressBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookViewController.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				A1C6B8D51AF7292100B08C1E /* ProfileViewController.swift */,
 				A159E16E1AF2BA770026B23A /* PushNotification.swift */,
 				A159E13E1AF2AFB10026B23A /* RegisterViewController.swift */,
+				A1216E0E1AFC095900562F97 /* TabBarController.swift */,
 				A159E1681AF2B7070026B23A /* Utilities.swift */,
 				A1E84CD21AF2DDC30003AE8D /* WelcomeViewController.swift */,
 				A19CF24C1AF1FBA80032755C /* Main.storyboard */,
@@ -545,6 +548,7 @@
 				A159E16F1AF2BA770026B23A /* PushNotification.swift in Sources */,
 				A14C46301AF301F900588B14 /* Images.swift in Sources */,
 				A19CF2461AF1FBA80032755C /* AppDelegate.swift in Sources */,
+				A1216E0F1AFC095900562F97 /* TabBarController.swift in Sources */,
 				A159E15F1AF2B3450026B23A /* SBGestureTableViewCellAction.swift in Sources */,
 				A159E15E1AF2B3450026B23A /* SBGestureTableViewCell.swift in Sources */,
 				A159E1691AF2B7070026B23A /* Utilities.swift in Sources */,

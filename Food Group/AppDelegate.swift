@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //        locationManager = CLLocationManager()
 //        locationManager?.requestWhenInUseAuthorization()
+        
+
         Parse.enableLocalDatastore()
         Parse.setApplicationId("nwfq7dvweeLwaPtjdXaJbeHn9Izsh1tUwzCxsWI5", clientKey: "ubTyayOWL4bVAAKQMyI6hpndcRORNZkJFztM2Hcl")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)

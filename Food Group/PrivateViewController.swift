@@ -72,20 +72,20 @@ class PrivateViewController: UITableViewController, UITableViewDelegate, UITable
         query.whereKey(PF_USER_EMAILCOPY, containedIn: emails)
         query.orderByAscending(PF_USER_FULLNAME)
         query.limit = 1000
-//        query.findObjectsInBackgroundWithBlock
-//            {
-//            (objects: [AnyObject]!, error: NSError!) -> Void in
-//            if error == nil {
-//                self.users2.removeAll(keepCapacity: false)
-//                for user in objects as! [PFUser]! {
-//                    self.users2.append(user)
-//                    self.removeUser(user[PF_USER_EMAILCOPY] as! String)
-//                }
-//                self.tableView.reloadData()
-//            } else {
-//                ProgressHUD.showError("Network error")
-//            }
-//        }
+        query.findObjectsInBackgroundWithBlock
+            {
+            (objects, error) -> Void in
+            if error == nil {
+                self.users2.removeAll(keepCapacity: false)
+                for user in objects as! [PFUser]! {
+                    self.users2.append(user)
+                    self.removeUser(user[PF_USER_EMAILCOPY] as! String)
+                }
+                self.tableView.reloadData()
+            } else {
+                ProgressHUD.showError("Network error")
+            }
+        }
     }
     
     func removeUser(removeEmail: String) {

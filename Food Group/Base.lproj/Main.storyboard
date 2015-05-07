@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="y4Z-7F-j66" id="2bS-27-7FV"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="2" title="Invite" image="895-user-group" selectedImage="895-user-group-selected" id="17h-Hg-kqo"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Invite" image="895-user-group" id="17h-Hg-kqo"/>
                     <navigationItem key="navigationItem" id="Sf0-Yb-q2D"/>
                     <value key="contentSizeForViewInPopover" type="size" width="400" height="400"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
@@ -239,7 +239,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Profile" image="779-users" selectedImage="779-users-selected" id="Qzv-Cs-z6T"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="779-users" id="Qzv-Cs-z6T"/>
                     <connections>
                         <outlet property="nameLabel" destination="B2r-SZ-jkO" id="37Y-Wa-PlT"/>
                         <outlet property="userImage" destination="aWa-ES-iVO" id="A6X-Pa-yB5"/>
@@ -840,7 +840,7 @@
         <!--Main Nav View-->
         <scene sceneID="h3D-sq-V8u">
             <objects>
-                <tabBarController title="Main Nav View" automaticallyAdjustsScrollViewInsets="NO" id="wB2-ep-snj" sceneMemberID="viewController">
+                <tabBarController title="Main Nav View" automaticallyAdjustsScrollViewInsets="NO" id="wB2-ep-snj" customClass="TabBarController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="vkg-Va-iDp">
@@ -851,6 +851,7 @@
                         <segue destination="6gP-Ds-BEI" kind="relationship" relationship="viewControllers" id="6O9-xO-Tg6"/>
                         <segue destination="y4Z-7F-j66" kind="relationship" relationship="viewControllers" id="7xO-0y-cTX"/>
                         <segue destination="8un-Hh-GlZ" kind="relationship" relationship="viewControllers" id="66O-g9-RQh"/>
+                        <segue destination="jjH-XE-w95" kind="relationship" relationship="viewControllers" id="goy-dV-f6m"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lac-iU-GNi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -987,7 +988,7 @@
                             <outlet property="delegate" destination="8un-Hh-GlZ" id="TQ2-Z5-ib9"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" tag="4" title="Search" image="722-location-pin" selectedImage="722-location-pin" id="Opq-hq-jHu"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Search" image="722-location-pin" id="Opq-hq-jHu"/>
                     <navigationItem key="navigationItem" title="Search for candidates" id="0xo-vf-OXi">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Fe2-4o-NLy"/>
                     </navigationItem>
@@ -1008,6 +1009,32 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="2643" y="201"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="vFL-Al-8pt">
+            <objects>
+                <tableViewController id="jjH-XE-w95" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Qju-7f-r8a">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Cay-wH-oh5">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Cay-wH-oh5" id="rvh-ns-27b">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jjH-XE-w95" id="nXK-H0-X1Y"/>
+                            <outlet property="delegate" destination="jjH-XE-w95" id="Xz4-VV-1OX"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" tag="3" title="Events" image="851-calendar" id="SLj-uv-aGc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mwf-XB-pZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2655" y="980"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="uuh-uV-13a">
@@ -1193,15 +1220,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RCQ-uM-Cz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3450" y="143"/>
+            <point key="canvasLocation" x="3444" y="201"/>
         </scene>
     </scenes>
     <resources>
         <image name="722-location-pin" width="19" height="28"/>
         <image name="779-users" width="28" height="25"/>
-        <image name="779-users-selected" width="28" height="25"/>
+        <image name="851-calendar" width="28" height="28"/>
         <image name="895-user-group" width="29" height="20"/>
-        <image name="895-user-group-selected" width="29" height="20"/>
         <image name="fb_icon" width="512" height="512"/>
         <image name="generic_user" width="225" height="225"/>
         <image name="menu" width="22" height="22"/>

@@ -65,5 +65,9 @@ class ProfileViewController: UIViewController
     }
     
     
+    deinit{
+        println("profile view was deinit")
+    }
+    
     
 }

@@ -44,5 +44,8 @@ class WelcomeViewController: UIViewController {
         
     }
     
+     deinit{
+        println("welcome view was deinit")
+    }
     
 }

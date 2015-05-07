@@ -183,4 +183,8 @@ class LoginViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    
+    deinit{
+        println("login view was deinit")
+    }
 }
