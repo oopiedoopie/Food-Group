@@ -15,12 +15,12 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-//    var locationManager: CLLocationManager?
+   var locationManager: CLLocationManager?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//        locationManager = CLLocationManager()
-//        locationManager?.requestWhenInUseAuthorization()
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
         
 
         Parse.enableLocalDatastore()
