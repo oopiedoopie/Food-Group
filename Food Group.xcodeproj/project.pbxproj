@@ -24,10 +24,6 @@
 		A159E1531AF2B1C50026B23A /* APContact.m in Sources */ = {isa = PBXBuildFile; fileRef = A159E14B1AF2B1C50026B23A /* APContact.m */; };
 		A159E1541AF2B1C50026B23A /* APPhoneWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A159E14D1AF2B1C50026B23A /* APPhoneWithLabel.m */; };
 		A159E1551AF2B1C50026B23A /* APSocialProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = A159E14F1AF2B1C50026B23A /* APSocialProfile.m */; };
-		A159E15D1AF2B3450026B23A /* SBGestureTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E1591AF2B3450026B23A /* SBGestureTableView.swift */; };
-		A159E15E1AF2B3450026B23A /* SBGestureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E15A1AF2B3450026B23A /* SBGestureTableViewCell.swift */; };
-		A159E15F1AF2B3450026B23A /* SBGestureTableViewCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E15B1AF2B3450026B23A /* SBGestureTableViewCellAction.swift */; };
-		A159E1601AF2B3450026B23A /* SBGestureTableViewCellSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E15C1AF2B3450026B23A /* SBGestureTableViewCellSideView.swift */; };
 		A159E1691AF2B7070026B23A /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E1681AF2B7070026B23A /* Utilities.swift */; };
 		A159E16B1AF2B7220026B23A /* PrivateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E16A1AF2B7220026B23A /* PrivateViewController.swift */; };
 		A159E16D1AF2B7300026B23A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A159E16C1AF2B7300026B23A /* Constants.swift */; };
@@ -61,9 +57,29 @@
 		A1D86D5B1AF6774F0041001D /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D86D571AF6774F0041001D /* ParseUI.framework */; };
 		A1D86D611AF678400041001D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D86D601AF678400041001D /* Bolts.framework */; };
 		A1D86D631AF679290041001D /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D86D621AF679290041001D /* Alamofire.swift */; };
+		A1E6421E1B01500A00E3BC05 /* SBGestureTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6421A1B01500A00E3BC05 /* SBGestureTableView.swift */; };
+		A1E6421F1B01500A00E3BC05 /* SBGestureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6421B1B01500A00E3BC05 /* SBGestureTableViewCell.swift */; };
+		A1E642201B01500A00E3BC05 /* SBGestureTableViewCellAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6421C1B01500A00E3BC05 /* SBGestureTableViewCellAction.swift */; };
+		A1E642211B01500A00E3BC05 /* SBGestureTableViewCellSideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6421D1B01500A00E3BC05 /* SBGestureTableViewCellSideView.swift */; };
 		A1E84CD31AF2DDC30003AE8D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E84CD21AF2DDC30003AE8D /* WelcomeViewController.swift */; };
 		A1EF8D561B0146A100BADE65 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF8D551B0146A100BADE65 /* LocationSearchViewController.swift */; };
 		A1EF8D581B0146BA00BADE65 /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF8D571B0146BA00BADE65 /* LocationDetailViewController.swift */; };
+		A1EF8D691B014A1700BADE65 /* FAKFontAwesome.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EF8D591B014A1700BADE65 /* FAKFontAwesome.h */; };
+		A1EF8D6A1B014A1700BADE65 /* FAKFontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EF8D5A1B014A1700BADE65 /* FAKFontAwesome.m */; };
+		A1EF8D6B1B014A1700BADE65 /* FAKFoundationIcons.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EF8D5B1B014A1700BADE65 /* FAKFoundationIcons.h */; };
+		A1EF8D6C1B014A1700BADE65 /* FAKFoundationIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EF8D5C1B014A1700BADE65 /* FAKFoundationIcons.m */; };
+		A1EF8D6D1B014A1700BADE65 /* FAKIcon.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EF8D5D1B014A1700BADE65 /* FAKIcon.h */; };
+		A1EF8D6E1B014A1700BADE65 /* FAKIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EF8D5E1B014A1700BADE65 /* FAKIcon.m */; };
+		A1EF8D6F1B014A1700BADE65 /* FAKIonIcons.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EF8D5F1B014A1700BADE65 /* FAKIonIcons.h */; };
+		A1EF8D701B014A1700BADE65 /* FAKIonIcons.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EF8D601B014A1700BADE65 /* FAKIonIcons.m */; };
+		A1EF8D711B014A1700BADE65 /* FAKZocial.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EF8D611B014A1700BADE65 /* FAKZocial.h */; };
+		A1EF8D721B014A1700BADE65 /* FAKZocial.m in Sources */ = {isa = PBXBuildFile; fileRef = A1EF8D621B014A1700BADE65 /* FAKZocial.m */; };
+		A1EF8D731B014A1700BADE65 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1EF8D631B014A1700BADE65 /* FontAwesome.otf */; };
+		A1EF8D741B014A1700BADE65 /* FontAwesomeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EF8D641B014A1700BADE65 /* FontAwesomeKit.h */; };
+		A1EF8D751B014A1700BADE65 /* foundation-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1EF8D651B014A1700BADE65 /* foundation-icons.ttf */; };
+		A1EF8D761B014A1700BADE65 /* ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1EF8D661B014A1700BADE65 /* ionicons.ttf */; };
+		A1EF8D771B014A1700BADE65 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = A1EF8D671B014A1700BADE65 /* LICENSE */; };
+		A1EF8D781B014A1700BADE65 /* zocial-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1EF8D681B014A1700BADE65 /* zocial-regular-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,10 +159,6 @@
 		A159E14E1AF2B1C50026B23A /* APSocialProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APSocialProfile.h; sourceTree = "<group>"; };
 		A159E14F1AF2B1C50026B23A /* APSocialProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APSocialProfile.m; sourceTree = "<group>"; };
 		A159E1501AF2B1C50026B23A /* APTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APTypes.h; sourceTree = "<group>"; };
-		A159E1591AF2B3450026B23A /* SBGestureTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableView.swift; sourceTree = "<group>"; };
-		A159E15A1AF2B3450026B23A /* SBGestureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCell.swift; sourceTree = "<group>"; };
-		A159E15B1AF2B3450026B23A /* SBGestureTableViewCellAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellAction.swift; sourceTree = "<group>"; };
-		A159E15C1AF2B3450026B23A /* SBGestureTableViewCellSideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellSideView.swift; sourceTree = "<group>"; };
 		A159E1661AF2B6110026B23A /* FontAwesomeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FontAwesomeKit.h; path = FontAwesomeKit/FontAwesomeKit.h; sourceTree = "<group>"; };
 		A159E1681AF2B7070026B23A /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		A159E16A1AF2B7220026B23A /* PrivateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateViewController.swift; sourceTree = "<group>"; };
@@ -186,9 +198,29 @@
 		A1D86D571AF6774F0041001D /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		A1D86D601AF678400041001D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A1D86D621AF679290041001D /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		A1E6421A1B01500A00E3BC05 /* SBGestureTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableView.swift; sourceTree = "<group>"; };
+		A1E6421B1B01500A00E3BC05 /* SBGestureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCell.swift; sourceTree = "<group>"; };
+		A1E6421C1B01500A00E3BC05 /* SBGestureTableViewCellAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellAction.swift; sourceTree = "<group>"; };
+		A1E6421D1B01500A00E3BC05 /* SBGestureTableViewCellSideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBGestureTableViewCellSideView.swift; sourceTree = "<group>"; };
 		A1E84CD21AF2DDC30003AE8D /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		A1EF8D551B0146A100BADE65 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 		A1EF8D571B0146BA00BADE65 /* LocationDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
+		A1EF8D591B014A1700BADE65 /* FAKFontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKFontAwesome.h; sourceTree = "<group>"; };
+		A1EF8D5A1B014A1700BADE65 /* FAKFontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKFontAwesome.m; sourceTree = "<group>"; };
+		A1EF8D5B1B014A1700BADE65 /* FAKFoundationIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKFoundationIcons.h; sourceTree = "<group>"; };
+		A1EF8D5C1B014A1700BADE65 /* FAKFoundationIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKFoundationIcons.m; sourceTree = "<group>"; };
+		A1EF8D5D1B014A1700BADE65 /* FAKIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKIcon.h; sourceTree = "<group>"; };
+		A1EF8D5E1B014A1700BADE65 /* FAKIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKIcon.m; sourceTree = "<group>"; };
+		A1EF8D5F1B014A1700BADE65 /* FAKIonIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKIonIcons.h; sourceTree = "<group>"; };
+		A1EF8D601B014A1700BADE65 /* FAKIonIcons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKIonIcons.m; sourceTree = "<group>"; };
+		A1EF8D611B014A1700BADE65 /* FAKZocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAKZocial.h; sourceTree = "<group>"; };
+		A1EF8D621B014A1700BADE65 /* FAKZocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAKZocial.m; sourceTree = "<group>"; };
+		A1EF8D631B014A1700BADE65 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		A1EF8D641B014A1700BADE65 /* FontAwesomeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesomeKit.h; sourceTree = "<group>"; };
+		A1EF8D651B014A1700BADE65 /* foundation-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "foundation-icons.ttf"; sourceTree = "<group>"; };
+		A1EF8D661B014A1700BADE65 /* ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ionicons.ttf; sourceTree = "<group>"; };
+		A1EF8D671B014A1700BADE65 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		A1EF8D681B014A1700BADE65 /* zocial-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zocial-regular-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,17 +289,6 @@
 				A159E1501AF2B1C50026B23A /* APTypes.h */,
 			);
 			name = APAddressBook;
-			sourceTree = "<group>";
-		};
-		A159E1611AF2B34D0026B23A /* SBGestureTableView */ = {
-			isa = PBXGroup;
-			children = (
-				A159E1591AF2B3450026B23A /* SBGestureTableView.swift */,
-				A159E15A1AF2B3450026B23A /* SBGestureTableViewCell.swift */,
-				A159E15B1AF2B3450026B23A /* SBGestureTableViewCellAction.swift */,
-				A159E15C1AF2B3450026B23A /* SBGestureTableViewCellSideView.swift */,
-			);
-			name = SBGestureTableView;
 			sourceTree = "<group>";
 		};
 		A162EFD21AFBFEEC00FA79F4 /* Products */ = {
@@ -361,6 +382,8 @@
 		A19CF2901AF1FF170032755C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1E642191B01500A00E3BC05 /* SBGestureTableView */,
+				A1EF8D791B014A2400BADE65 /* FontKitAwesome */,
 				A1C6B8D31AF726BE00B08C1E /* MapKit.framework */,
 				A1D86D601AF678400041001D /* Bolts.framework */,
 				A1D86D541AF6774F0041001D /* Parse.framework */,
@@ -369,7 +392,6 @@
 				A1D86D571AF6774F0041001D /* ParseUI.framework */,
 				A159C3461AF530AC00425F8A /* FacebookSDK.framework */,
 				A159C3471AF530AC00425F8A /* FBAudienceNetwork.framework */,
-				A159E1611AF2B34D0026B23A /* SBGestureTableView */,
 				A159E1561AF2B1CE0026B23A /* APAddressBook */,
 				A159E1451AF2B0220026B23A /* ProgressHUD */,
 				A15769951AF297B600B2A1AC /* Accounts.framework */,
@@ -389,6 +411,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A1E642191B01500A00E3BC05 /* SBGestureTableView */ = {
+			isa = PBXGroup;
+			children = (
+				A1E6421A1B01500A00E3BC05 /* SBGestureTableView.swift */,
+				A1E6421B1B01500A00E3BC05 /* SBGestureTableViewCell.swift */,
+				A1E6421C1B01500A00E3BC05 /* SBGestureTableViewCellAction.swift */,
+				A1E6421D1B01500A00E3BC05 /* SBGestureTableViewCellSideView.swift */,
+			);
+			path = SBGestureTableView;
+			sourceTree = "<group>";
+		};
+		A1EF8D791B014A2400BADE65 /* FontKitAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				A1EF8D591B014A1700BADE65 /* FAKFontAwesome.h */,
+				A1EF8D5A1B014A1700BADE65 /* FAKFontAwesome.m */,
+				A1EF8D5B1B014A1700BADE65 /* FAKFoundationIcons.h */,
+				A1EF8D5C1B014A1700BADE65 /* FAKFoundationIcons.m */,
+				A1EF8D5D1B014A1700BADE65 /* FAKIcon.h */,
+				A1EF8D5E1B014A1700BADE65 /* FAKIcon.m */,
+				A1EF8D5F1B014A1700BADE65 /* FAKIonIcons.h */,
+				A1EF8D601B014A1700BADE65 /* FAKIonIcons.m */,
+				A1EF8D611B014A1700BADE65 /* FAKZocial.h */,
+				A1EF8D621B014A1700BADE65 /* FAKZocial.m */,
+				A1EF8D631B014A1700BADE65 /* FontAwesome.otf */,
+				A1EF8D641B014A1700BADE65 /* FontAwesomeKit.h */,
+				A1EF8D651B014A1700BADE65 /* foundation-icons.ttf */,
+				A1EF8D661B014A1700BADE65 /* ionicons.ttf */,
+				A1EF8D671B014A1700BADE65 /* LICENSE */,
+				A1EF8D681B014A1700BADE65 /* zocial-regular-webfont.ttf */,
+			);
+			name = FontKitAwesome;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -396,6 +452,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EF8D691B014A1700BADE65 /* FAKFontAwesome.h in Headers */,
+				A1EF8D6B1B014A1700BADE65 /* FAKFoundationIcons.h in Headers */,
+				A1EF8D6D1B014A1700BADE65 /* FAKIcon.h in Headers */,
+				A1EF8D711B014A1700BADE65 /* FAKZocial.h in Headers */,
+				A1EF8D741B014A1700BADE65 /* FontAwesomeKit.h in Headers */,
+				A1EF8D6F1B014A1700BADE65 /* FAKIonIcons.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,8 +587,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A159E1431AF2B0180026B23A /* ProgressHUD.bundle in Resources */,
+				A1EF8D731B014A1700BADE65 /* FontAwesome.otf in Resources */,
+				A1EF8D771B014A1700BADE65 /* LICENSE in Resources */,
 				A186D2231AFAF1EE0089B3DD /* Images.xcassets in Resources */,
 				A19CF24E1AF1FBA80032755C /* Main.storyboard in Resources */,
+				A1EF8D761B014A1700BADE65 /* ionicons.ttf in Resources */,
+				A1EF8D751B014A1700BADE65 /* foundation-icons.ttf in Resources */,
+				A1EF8D781B014A1700BADE65 /* zocial-regular-webfont.ttf in Resources */,
 				A19CF2531AF1FBA80032755C /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,16 +614,19 @@
 			files = (
 				A159E16F1AF2BA770026B23A /* PushNotification.swift in Sources */,
 				A14C46301AF301F900588B14 /* Images.swift in Sources */,
+				A1EF8D6E1B014A1700BADE65 /* FAKIcon.m in Sources */,
 				A19CF2461AF1FBA80032755C /* AppDelegate.swift in Sources */,
 				A1216E0F1AFC095900562F97 /* TabBarController.swift in Sources */,
 				A1EF8D581B0146BA00BADE65 /* LocationDetailViewController.swift in Sources */,
-				A159E15F1AF2B3450026B23A /* SBGestureTableViewCellAction.swift in Sources */,
-				A159E15E1AF2B3450026B23A /* SBGestureTableViewCell.swift in Sources */,
+				A1E642201B01500A00E3BC05 /* SBGestureTableViewCellAction.swift in Sources */,
 				A159E1691AF2B7070026B23A /* Utilities.swift in Sources */,
 				A1C6B8D61AF7292100B08C1E /* ProfileViewController.swift in Sources */,
+				A1EF8D701B014A1700BADE65 /* FAKIonIcons.m in Sources */,
 				A159E1531AF2B1C50026B23A /* APContact.m in Sources */,
-				A159E1601AF2B3450026B23A /* SBGestureTableViewCellSideView.swift in Sources */,
+				A1E6421E1B01500A00E3BC05 /* SBGestureTableView.swift in Sources */,
+				A1E6421F1B01500A00E3BC05 /* SBGestureTableViewCell.swift in Sources */,
 				A159E1541AF2B1C50026B23A /* APPhoneWithLabel.m in Sources */,
+				A1EF8D6A1B014A1700BADE65 /* FAKFontAwesome.m in Sources */,
 				A19B4C741AFA744E0011B552 /* SelectMultipleViewController.swift in Sources */,
 				A1D86D631AF679290041001D /* Alamofire.swift in Sources */,
 				A159E1441AF2B0180026B23A /* ProgressHUD.m in Sources */,
@@ -564,8 +634,9 @@
 				A159E13F1AF2AFB10026B23A /* RegisterViewController.swift in Sources */,
 				A1E84CD31AF2DDC30003AE8D /* WelcomeViewController.swift in Sources */,
 				A159E16B1AF2B7220026B23A /* PrivateViewController.swift in Sources */,
+				A1EF8D6C1B014A1700BADE65 /* FAKFoundationIcons.m in Sources */,
+				A1EF8D721B014A1700BADE65 /* FAKZocial.m in Sources */,
 				A19B4C731AFA744E0011B552 /* SearchViewController.swift in Sources */,
-				A159E15D1AF2B3450026B23A /* SBGestureTableView.swift in Sources */,
 				A159E1511AF2B1C50026B23A /* APAddress.m in Sources */,
 				A159E16D1AF2B7300026B23A /* Constants.swift in Sources */,
 				A14C46341AF3023400588B14 /* AddressBookViewController.swift in Sources */,
@@ -573,6 +644,7 @@
 				A15769981AF2991E00B2A1AC /* LoginViewController.swift in Sources */,
 				A19B4C751AFA744E0011B552 /* SelectSingleViewController.swift in Sources */,
 				A159E1551AF2B1C50026B23A /* APSocialProfile.m in Sources */,
+				A1E642211B01500A00E3BC05 /* SBGestureTableViewCellSideView.swift in Sources */,
 				A159E1521AF2B1C50026B23A /* APAddressBook.m in Sources */,
 				A19CF2491AF1FBA80032755C /* Food_Group.xcdatamodeld in Sources */,
 			);
