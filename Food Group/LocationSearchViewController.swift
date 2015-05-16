@@ -12,12 +12,13 @@
 import UIKit
 import MapKit
 
+
 //
-//  MasterViewController.swift
-//  SBGestureTableView-Swift
+//  LocationSearchViewController.swift
+//  LE SearchTest
 //
-//  Created by Ben Nichols on 10/4/14.
-//  Copyright (c) 2014 Stickbuilt. All rights reserved.
+//  Created by Eric Cauble on 3/3/15.
+//  Copyright (c) 2015 Eric Cauble. All rights reserved.
 //
 
 
@@ -27,7 +28,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: SBGestureTableView!
-    
+
     let checkIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let closeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let composeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
@@ -36,8 +37,11 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     let redColor = UIColor(red: 213.0/255, green: 70.0/255, blue: 70.0/255, alpha: 1)
     let yellowColor = UIColor(red: 236.0/255, green: 223.0/255, blue: 60.0/255, alpha: 1)
     let brownColor = UIColor(red: 182.0/255, green: 127.0/255, blue: 78.0/255, alpha: 1)
-    
+    var matchingItems : [MKMapItem] = [MKMapItem]()
+    var userLocationManger = CLLocationManager()
+    var data = MKMapItem()
     var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
+    var itemDict = NSDictionary()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,7 +51,9 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-   
+        userLocationManger.desiredAccuracy = kCLLocationAccuracyBest;
+        userLocationManger.distanceFilter = kCLDistanceFilterNone;
+        userLocationManger.startUpdatingLocation()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         navigationItem.rightBarButtonItem = addButton
@@ -56,9 +62,12 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         tableView.didMoveCellFromIndexPathToIndexPathBlock = {(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) -> Void in
             self.objects.exchangeObjectAtIndex(toIndexPath.row, withObjectAtIndex: fromIndexPath.row)
         }
+        
         removeCellBlock = {(tableView: SBGestureTableView, cell: SBGestureTableViewCell) -> Void in
             let indexPath = tableView.indexPathForCell(cell)
+ 
             self.objects.removeObjectAtIndex(indexPath!.row)
+            println("removed \(tableView.indexPathForCell(cell)?.item)")
             tableView.removeCell(cell, duration: 0.3, completion: nil)
         }
         
@@ -66,10 +75,12 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        println(searchBar.text)
-                 self.tableView.reloadData()
+   
+       // self.insertNewObject(searchBar.text)
+        self.tableView.reloadData()
     }
+    
+ //   func searchBar(searchBar: UISearchBar, )
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -126,5 +137,80 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         return cell
     }
     
+    
+    // MARK: - Search functions
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        //create a location, for now we manually add lat/lon coordinates (these are for mauldin high)
+        
+        let locationSpan = MKCoordinateSpanMake(0.5, 0.5)
+        var coordinate = CLLocationCoordinate2DMake(userLocationManger.location.coordinate.latitude, userLocationManger.location.coordinate.longitude)
+        let userRegion = MKCoordinateRegionMake(coordinate, locationSpan)
+        let request = MKLocalSearchRequest()
+        request.region = userRegion
+        
+        //add query here
+        request.naturalLanguageQuery = searchBar.text
+        let search = MKLocalSearch(request: request)
+        
+        //here's where we search and iterate through the results
+        search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
+            if (error != nil)
+            {
+                //assume that they aren't connected to the internet
+                var alert = UIAlertView()
+                alert.message = "This app needs access to cellular data or a wi-fi network to make searches"
+                alert.addButtonWithTitle("OK")
+                alert.show()
+                println("Error occured in search: \(error.localizedDescription)")
+            }
+            else if (response.mapItems.count == 0)
+            {
+                var alert = UIAlertView()
+                alert.message = "No matches found for \(searchBar.text)"
+                alert.addButtonWithTitle("OK")
+                alert.show()
+            }
+            else
+            {
+                //add our MKMapItems items to the matchingItems array
+                for item in response.mapItems as! [MKMapItem!]
+                {
+                    println(item.name)
+                    self.matchingItems.append(item)
+                }
+                //once we have the array, we tell the table to fill with the results
+                self.tableView.reloadData()
+                ProgressHUD.showSuccess("Found \(self.matchingItems.count) matches")
+            }
+        })
+        //tells the keyboard to go away once you hit search
+        searchBar.resignFirstResponder()
+
+    }
+
+    
+}//ends class LocationSearchViewController
+
+
+
+
+// MARK: - Extensions
+
+//get string value of double without casting
+extension String {
+    var doubleValue: Double {
+        return (self as NSString).doubleValue
+    }
+}
+
+
+//formats a double's decimal places
+extension Double {
+    func string(fractionDigits:Int) -> String {
+        let formatter = NSNumberFormatter()
+        formatter.minimumFractionDigits = fractionDigits
+        formatter.maximumFractionDigits = fractionDigits
+        return formatter.stringFromNumber(self)!
+    }
 }
 

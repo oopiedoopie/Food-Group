@@ -1149,7 +1149,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="722-location-pin" id="OEI-LF-Zeh"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="Search" image="722-location-pin" id="OEI-LF-Zeh"/>
                     <navigationItem key="navigationItem" title="Master" id="bka-Q5-Bjs"/>
                     <connections>
                         <outlet property="searchBar" destination="GSy-Wn-TfK" id="j0h-6c-Sah"/>
