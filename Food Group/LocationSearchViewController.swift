@@ -24,11 +24,10 @@ import MapKit
 
 class LocationSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var objects = NSMutableArray()
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: SBGestureTableView!
-
+    var objects = NSMutableArray()
     let checkIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let closeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let composeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
@@ -46,7 +45,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
+    // MARK: - initializers
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -65,27 +64,15 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         
         removeCellBlock = {(tableView: SBGestureTableView, cell: SBGestureTableViewCell) -> Void in
             let indexPath = tableView.indexPathForCell(cell)
- 
-            self.objects.removeObjectAtIndex(indexPath!.row)
-            println("removed \(tableView.indexPathForCell(cell)?.item)")
+            
+            ProgressHUD.showSuccess("Removed cell for \n \(self.matchingItems[indexPath!.row].name)")
+            self.matchingItems.removeAtIndex(indexPath!.row)
             tableView.removeCell(cell, duration: 0.3, completion: nil)
         }
         
       
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-   
-       // self.insertNewObject(searchBar.text)
-        self.tableView.reloadData()
-    }
-    
- //   func searchBar(searchBar: UISearchBar, )
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
   
     func setupIcons() {
@@ -101,8 +88,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
     
-    // MARK: - Segues
-    
+    // MARK: - Segue
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow() {
@@ -114,13 +100,12 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     // MARK: - Table View
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return matchingItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -132,13 +117,21 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         cell.firstRightAction = SBGestureTableViewCellAction(icon: composeIcon.imageWithSize(size), color: yellowColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
         cell.secondRightAction = SBGestureTableViewCellAction(icon: clockIcon.imageWithSize(size), color: brownColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
         
-        let object = objects[indexPath.row] as! NSDate
-        cell.textLabel!.text = object.description
+        let item = matchingItems[indexPath.row] as MKMapItem
+        cell.textLabel!.text = item.name
         return cell
     }
     
     
     // MARK: - Search functions
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        // self.insertNewObject(searchBar.text)
+        self.tableView.reloadData()
+    }
+    
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         //create a location, for now we manually add lat/lon coordinates (these are for mauldin high)
         
@@ -157,18 +150,14 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
             if (error != nil)
             {
                 //assume that they aren't connected to the internet
-                var alert = UIAlertView()
-                alert.message = "This app needs access to cellular data or a wi-fi network to make searches"
-                alert.addButtonWithTitle("OK")
-                alert.show()
-                println("Error occured in search: \(error.localizedDescription)")
+                ProgressHUD.showError("No matches found 😁", interaction: true)
+
             }
             else if (response.mapItems.count == 0)
             {
                 var alert = UIAlertView()
-                alert.message = "No matches found for \(searchBar.text)"
-                alert.addButtonWithTitle("OK")
-                alert.show()
+                ProgressHUD.showError("No matches found!", interaction: true)
+              
             }
             else
             {
@@ -188,14 +177,19 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
 
     }
 
-    
-}//ends class LocationSearchViewController
+    // MARK: - default class methods
 
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+}
+//ends class LocationSearchViewController
 
 
 
 // MARK: - Extensions
-
 //get string value of double without casting
 extension String {
     var doubleValue: Double {
