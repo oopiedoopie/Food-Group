@@ -20,7 +20,6 @@ import MapKit
 //  Copyright (c) 2014 Stickbuilt. All rights reserved.
 //
 
-import UIKit
 
 class LocationSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -29,10 +28,10 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: SBGestureTableView!
     
-    let checkIcon = FAKIonIcons.ios7CheckmarkIconWithSize(30)
-    let closeIcon = FAKIonIcons.ios7CloseIconWithSize(30)
+    let checkIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
+    let closeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let composeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
-    let clockIcon = FAKIonIcons.ios7ClockIconWithSize(30)
+    let clockIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let greenColor = UIColor(red: 85.0/255, green: 213.0/255, blue: 80.0/255, alpha: 1)
     let redColor = UIColor(red: 213.0/255, green: 70.0/255, blue: 70.0/255, alpha: 1)
     let yellowColor = UIColor(red: 236.0/255, green: 223.0/255, blue: 60.0/255, alpha: 1)
@@ -46,7 +45,10 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.delegate = self
+        tableView.dataSource = self
+   
+
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         navigationItem.rightBarButtonItem = addButton
         
@@ -59,7 +61,14 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
             self.objects.removeObjectAtIndex(indexPath!.row)
             tableView.removeCell(cell, duration: 0.3, completion: nil)
         }
-     
+        
+      
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        println(searchBar.text)
+                 self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,7 +76,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    
+  
     func setupIcons() {
         checkIcon.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
         closeIcon.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
