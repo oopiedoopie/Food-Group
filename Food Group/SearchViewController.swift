@@ -22,7 +22,8 @@ class SearchViewController: UITableViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+
         self.searchBar.delegate = self
         self.loadUsers()
     }

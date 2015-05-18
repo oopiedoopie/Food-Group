@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-class LocationDetailViewController: UIViewController {
+class LocationDetailViewController: UITableViewController, UITextFieldDelegate {
     
     //outlets to storyboard
     @IBOutlet weak var mapView: MKMapView!

@@ -6,20 +6,8 @@
 //  Copyright (c) 2015 Eric Cauble. All rights reserved.
 //
 
-
-
-
 import UIKit
 import MapKit
-
-
-//
-//  LocationSearchViewController.swift
-//  LE SearchTest
-//
-//  Created by Eric Cauble on 3/3/15.
-//  Copyright (c) 2015 Eric Cauble. All rights reserved.
-//
 
 
 class LocationSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -42,14 +30,14 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
     var itemDict = NSDictionary()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+  
     // MARK: - initializers
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
+
         userLocationManger.desiredAccuracy = kCLLocationAccuracyBest;
         userLocationManger.distanceFilter = kCLDistanceFilterNone;
         userLocationManger.startUpdatingLocation()
@@ -69,11 +57,20 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
             self.matchingItems.removeAtIndex(indexPath!.row)
             tableView.removeCell(cell, duration: 0.3, completion: nil)
         }
-        
-      
+
     }
     
-    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Left) {
+            println("Swipe Left")
+        
+        }
+        
+        if (sender.direction == .Right) {
+            println("Swipe Right")
+           
+        }
+    }
   
     func setupIcons() {
         checkIcon.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
@@ -89,15 +86,14 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     // MARK: - Segue
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as! NSDate
-               // (segue.destinationViewController as! LocationDetailViewController).detailItem = object
-               // tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showDetail")
+        {
+            var detailView = segue.destinationViewController as! LocationDetailViewController;
+            detailView.itemDetail = self.data
         }
     }
+    
     
     // MARK: - Table View
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -113,9 +109,19 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! SBGestureTableViewCell
         
         cell.firstLeftAction = SBGestureTableViewCellAction(icon: checkIcon.imageWithSize(size), color: greenColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
-        cell.secondLeftAction = SBGestureTableViewCellAction(icon: closeIcon.imageWithSize(size), color: redColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
-        cell.firstRightAction = SBGestureTableViewCellAction(icon: composeIcon.imageWithSize(size), color: yellowColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
-        cell.secondRightAction = SBGestureTableViewCellAction(icon: clockIcon.imageWithSize(size), color: brownColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
+        cell.secondLeftAction = SBGestureTableViewCellAction(icon: closeIcon.imageWithSize(size), color: greenColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
+        cell.firstRightAction = SBGestureTableViewCellAction(icon: composeIcon.imageWithSize(size), color: redColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
+        cell.secondRightAction = SBGestureTableViewCellAction(icon: clockIcon.imageWithSize(size), color: redColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
+         itemDict = matchingItems[indexPath.row].placemark.addressDictionary
+        var street : String = itemDict.valueForKey("Street") as! String
+        var city : String = itemDict.valueForKey("City") as! String
+        var state : String = itemDict.valueForKey("State") as! String
+        var zip : String = itemDict.valueForKey("ZIP") as! String
+       // cell.addressLabel.text = "\(street), \(city), \(state) \(zip)"
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        var distanceInMeters : Double = self.userLocationManger.location.distanceFromLocation(matchingItems[indexPath.row].placemark.location)
+        var distanceInMiles : Double = ((distanceInMeters.description as String).doubleValue * 0.00062137)
+        //cell.distanceLabel.text = "\(distanceInMiles.string(2)) miles away"
         
         let item = matchingItems[indexPath.row] as MKMapItem
         cell.textLabel!.text = item.name
@@ -123,17 +129,29 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
+     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        data = self.matchingItems[indexPath.row]
+        self.performSegueWithIdentifier("showDetail", sender: tableView)
+        var detailView = LocationDetailViewController()
+    }
+    
+ 
+    
     // MARK: - Search functions
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        // self.insertNewObject(searchBar.text)
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
+ 
+        if(count(searchBar.text) < 3){
+            println("searchbar text too short to search")
+        }
+        else{
+            
+        }
     }
     
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        //create a location, for now we manually add lat/lon coordinates (these are for mauldin high)
         
         let locationSpan = MKCoordinateSpanMake(0.5, 0.5)
         var coordinate = CLLocationCoordinate2DMake(userLocationManger.location.coordinate.latitude, userLocationManger.location.coordinate.longitude)
@@ -149,14 +167,13 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
             if (error != nil)
             {
-                //assume that they aren't connected to the internet
-                ProgressHUD.showError("No matches found 😁", interaction: true)
+                //I done goofed'
+                ProgressHUD.showError(error.description as String, interaction: true)
 
             }
             else if (response.mapItems.count == 0)
             {
-                var alert = UIAlertView()
-                ProgressHUD.showError("No matches found!", interaction: true)
+                ProgressHUD.showError("No matches were found.", interaction: true)
               
             }
             else
@@ -184,12 +201,18 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
 }
 //ends class LocationSearchViewController
 
 
 
 // MARK: - Extensions
+
 //get string value of double without casting
 extension String {
     var doubleValue: Double {

@@ -15,12 +15,20 @@ class LoginViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    @IBOutlet weak var facebookButton: UIButton!
     
      override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard"))
         self.emailField.delegate = self
         self.passwordField.delegate = self
+        facebookButton.layer.shadowColor = UIColor.darkGrayColor().CGColor
+        facebookButton.layer.shadowPath = UIBezierPath(roundedRect: facebookButton.bounds, cornerRadius: 12.0).CGPath
+        facebookButton.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        facebookButton.layer.shadowOpacity = 1.0
+        facebookButton.layer.shadowRadius = 2
+        facebookButton.layer.masksToBounds = true
+        facebookButton.clipsToBounds = false
     }
     
     override func viewDidAppear(animated: Bool) {
