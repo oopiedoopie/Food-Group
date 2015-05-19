@@ -39,13 +39,13 @@ class ProfileViewController: UIViewController
     //log out user from Parse, set default values, switch to login view
     @IBAction func logOutUser(sender: AnyObject)
     {
-        PFUser.logOut()
+  
         self.userImage.image = UIImage(named: "generic_user")
         ProgressHUD.showSuccess("You have logged out")
-        nameLabel.text = "Logged out"
+        PFUser.logOut()
+        self.nameLabel.text = "Logged out"
         self.performSegueWithIdentifier("showLoginVC", sender: nil)
     }
-    
     
     
     func loadUserImage(user: PFUser)
@@ -72,4 +72,13 @@ class ProfileViewController: UIViewController
     }
     
     
+}
+
+
+func mydelay(#seconds:Double, completion:()->()) {
+    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
+    
+    dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+        completion()
+    }
 }

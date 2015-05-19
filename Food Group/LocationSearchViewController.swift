@@ -60,6 +60,8 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
 
     }
     
+    
+    
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left) {
             println("Swipe Left")
@@ -131,8 +133,8 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     
      func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         data = self.matchingItems[indexPath.row]
-        self.performSegueWithIdentifier("showDetail", sender: tableView)
-        var detailView = LocationDetailViewController()
+        self.performSegueWithIdentifier("showDetail", sender: self.view)
+        
     }
     
  
@@ -142,8 +144,11 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         //self.tableView.reloadData()
  
+        //TODO: - Fill the tableview with results after three characters have been entered
         if(count(searchBar.text) < 3){
             println("searchbar text too short to search")
+            
+            //tableView.reloadData()
         }
         else{
             
@@ -167,7 +172,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
             if (error != nil)
             {
-                //I done goofed'
+                //I done goof'd
                 ProgressHUD.showError(error.description as String, interaction: true)
 
             }
@@ -181,12 +186,11 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
                 //add our MKMapItems items to the matchingItems array
                 for item in response.mapItems as! [MKMapItem!]
                 {
-                    println(item.name)
                     self.matchingItems.append(item)
                 }
                 //once we have the array, we tell the table to fill with the results
-                self.tableView.reloadData()
                 ProgressHUD.showSuccess("Found \(self.matchingItems.count) matches")
+                self.tableView.reloadData()
             }
         })
         //tells the keyboard to go away once you hit search
