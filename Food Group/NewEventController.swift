@@ -45,6 +45,8 @@ class NewEventController: UITableViewController, UITextFieldDelegate {
             (date) -> Void in
             self.startTimeTextField.setTitle("\(self.formatDate(date))", forState: nil)
             self.startTime = (date)
+            self.endTime = (self.startTime.dateByAddingTimeInterval(1*60*60))
+            self.endTimeTextField.setTitle("\(self.formatDate(self.endTime))", forState: nil)
         }
         self.startTimeTextField.resignFirstResponder()
     }
