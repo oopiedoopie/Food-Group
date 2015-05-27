@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 
-class LocationDetailViewController: UITableViewController, UITextFieldDelegate {
+class LocationDetailViewController: UIViewController, UITextFieldDelegate {
     
     //outlets to storyboard
     @IBOutlet weak var mapView: MKMapView!
@@ -23,7 +23,7 @@ class LocationDetailViewController: UITableViewController, UITextFieldDelegate {
     var userLocationManger = CLLocationManager()
     var itemDetail : MKMapItem = MKMapItem()
     var itemDict = NSDictionary()
-    //test
+ 
     
     
     override func viewDidLoad() {
@@ -36,9 +36,10 @@ class LocationDetailViewController: UITableViewController, UITextFieldDelegate {
         mapView.addAnnotation(itemDetail.placemark)
         nameLabel.text = itemDetail.name
         
+        
         //create a dictionary to load address data
         itemDict = itemDetail.placemark.addressDictionary
-        
+        println(itemDict.description)
         //extract values from the dictionary
         var street : String = itemDict.valueForKey("Street") as! String
         var city : String = itemDict.valueForKey("City") as! String
@@ -46,9 +47,39 @@ class LocationDetailViewController: UITableViewController, UITextFieldDelegate {
         var zip : String = itemDict.valueForKey("ZIP") as! String
         locationLabel.text = "\(street), \(city), \(state) \(zip)"
         //TODO: change to call, or format number to (xxx) xxx-xxxx
-        phoneNumberButton.setTitle(itemDetail.phoneNumber, forState: nil)
+        phoneNumberButton.setTitle(self.formatPhoneNumber(self.itemDetail.phoneNumber) as String, forState: nil)
         
     }
+    
+    
+    func formatPhoneNumber(itemNumber: String) -> NSString{
+        let currentValue: NSString = itemNumber as String
+        let strippedValue: NSString = currentValue.stringByReplacingOccurrencesOfString("[^0-9]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, currentValue.length))
+        var formattedString: NSString = ""
+        if strippedValue.length == 0 {
+            formattedString = "";
+        }
+        else if strippedValue.length < 3 {
+            formattedString = "(" + (strippedValue as String)
+        }
+        else if strippedValue.length == 3 {
+            formattedString = "(" + (strippedValue as String) + ") "
+        }
+        else if strippedValue.length < 6 {
+            formattedString = "(" + strippedValue.substringToIndex(3) + ") " + strippedValue.substringFromIndex(3)
+        }
+        else if strippedValue.length == 6 {
+            formattedString = "(" + strippedValue.substringToIndex(3) + ") " + strippedValue.substringFromIndex(3) + "-"
+        }
+        else if strippedValue.length <= 10 {
+            formattedString = "(" + strippedValue.substringToIndex(3) + ") " + strippedValue.substringWithRange(NSMakeRange(3, 3)) + "-" + strippedValue.substringFromIndex(6)
+        }
+        else if strippedValue.length >= 11 {
+            formattedString = "(" + strippedValue.substringToIndex(3) + ") " + strippedValue.substringWithRange(NSMakeRange(3, 3)) + "-" + strippedValue.substringWithRange(NSMakeRange(6, 4)) + " x" + strippedValue.substringFromIndex(10)
+        }
+        return formattedString
+    }
+    
     
     @IBAction func callNumber(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(itemDetail.phoneNumber)")!)
@@ -57,6 +88,13 @@ class LocationDetailViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func openURL(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string: "\(itemDetail.url)")!)
     }
+    
+    @IBAction func backButtonWasPressed(sender: AnyObject) {
+        self.navigationController?.popToViewController(LocationSearchViewController(), animated: true)
+    
+    }
+    
+ 
     
     override func didReceiveMemoryWarning() {
         //

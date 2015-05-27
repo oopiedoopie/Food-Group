@@ -134,8 +134,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
      func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         data = self.matchingItems[indexPath.row]
         self.performSegueWithIdentifier("showDetail", sender: self.view)
-        
-    }
+     }
     
  
     

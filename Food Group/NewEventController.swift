@@ -26,9 +26,7 @@ class NewEventController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-         //necessary in every viewcontroller that needs to access menu
-        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
-
+        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         var tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         self.view.addGestureRecognizer(tap)
         eventTitleTextField.delegate = self
@@ -45,6 +43,7 @@ class NewEventController: UITableViewController, UITextFieldDelegate {
             (date) -> Void in
             self.startTimeTextField.setTitle("\(self.formatDate(date))", forState: nil)
             self.startTime = (date)
+            //autoset end date an hour later, but it can be manually moved to any time.
             self.endTime = (self.startTime.dateByAddingTimeInterval(1*60*60))
             self.endTimeTextField.setTitle("\(self.formatDate(self.endTime))", forState: nil)
         }
@@ -61,8 +60,6 @@ class NewEventController: UITableViewController, UITextFieldDelegate {
             self.endTime = (date)
         }
         self.endTimeTextField.resignFirstResponder()
-        var tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-        self.view.addGestureRecognizer(tap)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -99,6 +96,7 @@ class NewEventController: UITableViewController, UITextFieldDelegate {
         eventTitleTextField.resignFirstResponder()
         return true;
     }
+    
     
     deinit{
         println("NewEventController deinit")

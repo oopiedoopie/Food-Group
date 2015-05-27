@@ -21,7 +21,7 @@ class SelectMultipleViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard"))
         self.loadUsers()
     }
 
@@ -72,6 +72,17 @@ class SelectMultipleViewController: UITableViewController {
         }
     }
     
+    @IBAction func goButtonWasPressed(sender: AnyObject) {
+        //prints object ids of the selected users
+        for aUser in selection{
+        println(aUser)
+        }
+    }
+    
+    
+    func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -114,6 +125,10 @@ class SelectMultipleViewController: UITableViewController {
         }
         
         self.tableView.reloadData()
+    }
+    
+    deinit{
+        println("select multiple was deninitialized")
     }
 
     
