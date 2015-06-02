@@ -61,18 +61,6 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
-    
-    func handleSwipes(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .Left) {
-            println("Swipe Left")
-        
-        }
-        
-        if (sender.direction == .Right) {
-            println("Swipe Right")
-           
-        }
-    }
   
     func setupIcons() {
         checkIcon.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor())
@@ -134,6 +122,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
      func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         data = self.matchingItems[indexPath.row]
         self.performSegueWithIdentifier("showDetail", sender: self.view)
+        println("row \(indexPath.row)")
      }
     
  
@@ -145,7 +134,6 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
  
         //TODO: - Fill the tableview with results after three characters have been entered
         if(count(searchBar.text) < 3){
-            println("searchbar text too short to search")
             
             //tableView.reloadData()
         }

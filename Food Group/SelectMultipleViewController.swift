@@ -72,12 +72,7 @@ class SelectMultipleViewController: UITableViewController {
         }
     }
     
-    @IBAction func goButtonWasPressed(sender: AnyObject) {
-        //prints object ids of the selected users
-        for aUser in selection{
-        println(aUser)
-        }
-    }
+  
     
     
     func dismissKeyboard() {

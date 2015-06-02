@@ -28,6 +28,7 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let locationSpan = MKCoordinateSpanMake(1.0, 1.0)
         var coordinate = CLLocationCoordinate2DMake(userLocationManger.location.coordinate.latitude, userLocationManger.location.coordinate.longitude)
         let userRegion = MKCoordinateRegionMake(coordinate, locationSpan)
@@ -39,7 +40,7 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
         
         //create a dictionary to load address data
         itemDict = itemDetail.placemark.addressDictionary
-        println(itemDict.description)
+
         //extract values from the dictionary
         var street : String = itemDict.valueForKey("Street") as! String
         var city : String = itemDict.valueForKey("City") as! String
@@ -51,9 +52,13 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func backButtonPressed(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     func formatPhoneNumber(itemNumber: String) -> NSString{
-        let currentValue: NSString = itemNumber as String
+        var temp = itemNumber.substringWithRange(Range<String.Index>(start: advance(itemNumber.startIndex, 2), end: advance(itemNumber.endIndex, 0)))
+        let currentValue: NSString = temp as String
         let strippedValue: NSString = currentValue.stringByReplacingOccurrencesOfString("[^0-9]", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, currentValue.length))
         var formattedString: NSString = ""
         if strippedValue.length == 0 {
@@ -89,10 +94,7 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
         UIApplication.sharedApplication().openURL(NSURL(string: "\(itemDetail.url)")!)
     }
     
-    @IBAction func backButtonWasPressed(sender: AnyObject) {
-        self.navigationController?.popToViewController(LocationSearchViewController(), animated: true)
-    
-    }
+
     
  
     
