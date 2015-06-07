@@ -9,13 +9,12 @@
 import UIKit
 import CoreData
 import Parse
-//import Bolts
-
+ 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-   var locationManager: CLLocationManager?
+    var locationManager: CLLocationManager?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -59,8 +58,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
         } else {
-            let types = UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound
-            application.registerForRemoteNotificationTypes(types)
+            let types = UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert
+            var settings: UIUserNotificationSettings = UIUserNotificationSettings( forTypes: types, categories: nil )
+            application.registerUserNotificationSettings( settings )
+            application.registerForRemoteNotifications()
         }
         
         

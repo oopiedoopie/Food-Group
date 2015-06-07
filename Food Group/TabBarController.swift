@@ -21,7 +21,10 @@ public class TabBarController: UITabBarController
         (self.tabBar.items![3] as! UITabBarItem).selectedImage = UIImage(named: "722-location-pin-selected")
     }
     
-    
+    override public func viewWillAppear(animated: Bool)
+    {
+        self.navigationController?.navigationBarHidden = true
+    }
     
     deinit
     {

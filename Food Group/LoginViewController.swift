@@ -11,7 +11,7 @@ import Parse
 import Alamofire
  
 
-class LoginViewController: UITableViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
@@ -23,7 +23,8 @@ class LoginViewController: UITableViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard"))
         self.emailField.delegate = self
         self.passwordField.delegate = self
-       
+        self.navigationItem.hidesBackButton = true;
+        self.navigationController!.navigationItem.hidesBackButton = true;
    
     }
     
@@ -187,7 +188,10 @@ class LoginViewController: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    
+    override func viewWillAppear(animated: Bool)
+    {
+        self.navigationController?.navigationBarHidden = true
+    }
     deinit{
         println("login view was deinit")
     }
