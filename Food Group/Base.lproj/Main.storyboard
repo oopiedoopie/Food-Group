@@ -97,6 +97,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QWe-dg-Ilx"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="wB2-ep-snj" kind="show" identifier="showProfileVC" id="Kkh-4Q-7xA"/>
                         <segue destination="r8p-wW-3Ry" kind="show" identifier="showSignUpVC" id="CA5-EH-qBf"/>
@@ -257,16 +258,17 @@
         <scene sceneID="djr-l6-LdR">
             <objects>
                 <tableViewController storyboardIdentifier="RegisterView" title="Register" id="bok-3J-kj1" customClass="RegisterViewController" customModule="Food_Group" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uvs-La-vrw">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Uvs-La-vrw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="8QM-cT-ygD">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fUI-Gu-ipH">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="103" id="fUI-Gu-ipH">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fUI-Gu-ipH" id="NmM-qI-NCK">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -1264,6 +1266,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="156" y="131" width="89" height="21"/>
                                 </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="356" y="131" width="89" height="21"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="156" y="31" width="89" height="21"/>
                                 </variation>
@@ -1288,6 +1293,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="191" y="246" width="19" height="21"/>
                                 </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="391" y="246" width="19" height="21"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="191" y="146" width="19" height="21"/>
                                 </variation>
@@ -1311,6 +1319,9 @@
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="162" y="160" width="77" height="72"/>
+                                </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="362" y="160" width="77" height="72"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="162" y="60" width="77" height="72"/>
@@ -1337,6 +1348,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="256" width="89" height="1"/>
                                 </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="256" width="89" height="1"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="156" width="89" height="1"/>
                                 </variation>
@@ -1358,6 +1372,9 @@
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="218" y="256" width="89" height="1"/>
+                                </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="418" y="256" width="89" height="1"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="218" y="156" width="89" height="1"/>
@@ -1383,6 +1400,9 @@
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="177" y="385" width="43" height="30"/>
+                                </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="377" y="385" width="43" height="30"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="177" y="285" width="43" height="30"/>
@@ -1410,6 +1430,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="290" width="213" height="30"/>
                                 </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="290" width="213" height="30"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="190" width="213" height="30"/>
                                 </variation>
@@ -1432,6 +1455,9 @@
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="339" width="213" height="30"/>
+                                </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="339" width="213" height="30"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="239" width="213" height="30"/>
@@ -1458,6 +1484,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="122" y="438" width="54" height="30"/>
                                 </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="322" y="438" width="54" height="30"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="122" y="338" width="54" height="30"/>
                                 </variation>
@@ -1483,6 +1512,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="429" width="213" height="1"/>
                                 </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="294" y="429" width="213" height="1"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="94" y="329" width="213" height="1"/>
                                 </variation>
@@ -1504,6 +1536,9 @@
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="200" y="438" width="1" height="30"/>
+                                </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="400" y="438" width="1" height="30"/>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="200" y="338" width="1" height="30"/>
@@ -1530,6 +1565,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="225" y="438" width="46" height="30"/>
                                 </variation>
+                                <variation key="widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="425" y="438" width="46" height="30"/>
+                                </variation>
                                 <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="225" y="338" width="46" height="30"/>
                                 </variation>
@@ -1550,7 +1588,6 @@
                         <color key="backgroundColor" red="0.99215686270000003" green="0.42352941179999998" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="3hy-SC-NvY"/>
-                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="emailField" destination="y5a-PN-0KN" id="PD2-GU-d7J"/>
                         <outlet property="facebookButton" destination="4l4-1K-B0V" id="L4T-6R-eBe"/>
@@ -1764,6 +1801,6 @@
         <image name="generic_user" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Kkh-4Q-7xA"/>
+        <segue reference="WLF-Q6-Sxz"/>
     </inferredMetricsTieBreakers>
 </document>

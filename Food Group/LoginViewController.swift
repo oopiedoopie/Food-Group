@@ -197,6 +197,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;
     }
+  
     
     deinit{
         println("login view was deinit")

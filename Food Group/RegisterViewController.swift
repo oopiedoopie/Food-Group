@@ -11,7 +11,8 @@ import Parse
 
 class RegisterViewController: UITableViewController, UITextFieldDelegate {
     
-    
+    let swipeRec = UISwipeGestureRecognizer()
+ 
     @IBOutlet var nameField: UITextField!
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
@@ -22,7 +23,8 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.nameField.delegate = self
         self.emailField.delegate = self
         self.passwordField.delegate = self
- 
+        swipeRec.addTarget(self, action: "swipeToPopView")
+        self.view.addGestureRecognizer(swipeRec)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -95,6 +97,16 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             }
             }
         }
+    }
+    
+    //sets the status bar color to white
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+    
+    //pops current controller
+    func swipeToPopView(){
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
 }

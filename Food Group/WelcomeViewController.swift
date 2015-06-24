@@ -37,6 +37,10 @@ class WelcomeViewController: UIViewController {
         
     }
     
+    //sets the status bar color to white
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
