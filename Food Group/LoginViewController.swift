@@ -192,6 +192,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     {
         self.navigationController?.navigationBarHidden = true
     }
+    
+    //sets the status bar color to white
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent;
+    }
+    
     deinit{
         println("login view was deinit")
     }
