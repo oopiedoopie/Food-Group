@@ -54,7 +54,7 @@
 		A19CF28B1AF1FE6F0032755C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A19CF28A1AF1FE6F0032755C /* SystemConfiguration.framework */; };
 		A19CF28D1AF1FE7A0032755C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19CF28C1AF1FE7A0032755C /* libz.dylib */; };
 		A19CF28F1AF1FE890032755C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A19CF28E1AF1FE890032755C /* libsqlite3.dylib */; };
-		A1A3A90C1B0988C10041B932 /* NewEventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3A90B1B0988C10041B932 /* NewEventController.swift */; };
+		A1A3A90C1B0988C10041B932 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3A90B1B0988C10041B932 /* NewEventViewController.swift */; };
 		A1C6B8D41AF726BE00B08C1E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C6B8D31AF726BE00B08C1E /* MapKit.framework */; };
 		A1C6B8D61AF7292100B08C1E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6B8D51AF7292100B08C1E /* ProfileViewController.swift */; };
 		A1D86D581AF6774F0041001D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D86D541AF6774F0041001D /* Parse.framework */; };
@@ -201,7 +201,7 @@
 		A19CF28A1AF1FE6F0032755C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A19CF28C1AF1FE7A0032755C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		A19CF28E1AF1FE890032755C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		A1A3A90B1B0988C10041B932 /* NewEventController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventController.swift; sourceTree = "<group>"; };
+		A1A3A90B1B0988C10041B932 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		A1C6B8D31AF726BE00B08C1E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A1C6B8D51AF7292100B08C1E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A1D86D541AF6774F0041001D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -274,6 +274,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1409DC01B3B1716008D8A16 /* Utility Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A1D86D621AF679290041001D /* Alamofire.swift */,
+				A14C46311AF3022300588B14 /* Camera.swift */,
+				A159E16C1AF2B7300026B23A /* Constants.swift */,
+				A14C462F1AF301F900588B14 /* Images.swift */,
+				A164CC741B3B01F300B2F807 /* FGButton.swift */,
+				A15AFA4C1B24B508007DE029 /* FGRoundView.swift */,
+				A15AFA521B24B534007DE029 /* UIColorExtension.swift */,
+				A159E1681AF2B7070026B23A /* Utilities.swift */,
+			);
+			name = "Utility Classes";
+			sourceTree = "<group>";
+		};
 		A159E1451AF2B0220026B23A /* ProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,20 +352,15 @@
 		A19CF2421AF1FBA80032755C /* Food Group */ = {
 			isa = PBXGroup;
 			children = (
+				A1409DC01B3B1716008D8A16 /* Utility Classes */,
 				A17A143B1B0AFCC7008289B8 /* DatePickerDialog.swift */,
 				A14C46331AF3023400588B14 /* AddressBookViewController.swift */,
-				A1D86D621AF679290041001D /* Alamofire.swift */,
 				A19CF2451AF1FBA80032755C /* AppDelegate.swift */,
-				A14C46311AF3022300588B14 /* Camera.swift */,
-				A159E16C1AF2B7300026B23A /* Constants.swift */,
-				A164CC741B3B01F300B2F807 /* FGButton.swift */,
-				A15AFA4C1B24B508007DE029 /* FGRoundView.swift */,
-				A14C462F1AF301F900588B14 /* Images.swift */,
 				A19B4C701AFA744E0011B552 /* SearchViewController.swift */,
 				A19B4C711AFA744E0011B552 /* SelectMultipleViewController.swift */,
 				A19B4C721AFA744E0011B552 /* SelectSingleViewController.swift */,
 				A15769971AF2991E00B2A1AC /* LoginViewController.swift */,
-				A1A3A90B1B0988C10041B932 /* NewEventController.swift */,
+				A1A3A90B1B0988C10041B932 /* NewEventViewController.swift */,
 				A143BCF61B24EDDB00E73A23 /* PasswordResetViewController.swift */,
 				A159E16A1AF2B7220026B23A /* PrivateViewController.swift */,
 				A1C6B8D51AF7292100B08C1E /* ProfileViewController.swift */,
@@ -359,8 +369,6 @@
 				A1216E0E1AFC095900562F97 /* TabBarController.swift */,
 				A1EF8D551B0146A100BADE65 /* LocationSearchViewController.swift */,
 				A1EF8D571B0146BA00BADE65 /* LocationDetailViewController.swift */,
-				A15AFA521B24B534007DE029 /* UIColorExtension.swift */,
-				A159E1681AF2B7070026B23A /* Utilities.swift */,
 				A1E84CD21AF2DDC30003AE8D /* WelcomeViewController.swift */,
 				A19CF24C1AF1FBA80032755C /* Main.storyboard */,
 				A19CF2511AF1FBA80032755C /* LaunchScreen.xib */,
@@ -661,7 +669,7 @@
 				A19B4C731AFA744E0011B552 /* SearchViewController.swift in Sources */,
 				A159E1511AF2B1C50026B23A /* APAddress.m in Sources */,
 				A159E16D1AF2B7300026B23A /* Constants.swift in Sources */,
-				A1A3A90C1B0988C10041B932 /* NewEventController.swift in Sources */,
+				A1A3A90C1B0988C10041B932 /* NewEventViewController.swift in Sources */,
 				A14C46341AF3023400588B14 /* AddressBookViewController.swift in Sources */,
 				A14C46321AF3022300588B14 /* Camera.swift in Sources */,
 				A15AFA531B24B534007DE029 /* UIColorExtension.swift in Sources */,

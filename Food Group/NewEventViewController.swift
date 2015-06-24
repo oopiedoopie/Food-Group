@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class NewEventController: UITableViewController, UITextFieldDelegate {
+class NewEventViewController: UIViewController, UITextFieldDelegate {
     
     
     
@@ -26,7 +26,6 @@ class NewEventController: UITableViewController, UITextFieldDelegate {
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0)
         var tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
         self.view.addGestureRecognizer(tap)
         eventTitleTextField.delegate = self

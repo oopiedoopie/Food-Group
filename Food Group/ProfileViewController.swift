@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController
         {
             nameLabel.text = "Please log in"
             self.userImage.image = UIImage(named: "generic_user")
-            println("user not logged in")
+            //self.navigationController?.popToViewController(LoginViewController(), animated: true)
         }
     }
     
@@ -44,7 +44,7 @@ class ProfileViewController: UIViewController
         ProgressHUD.showSuccess("You have logged out")
         PFUser.logOut()
         self.nameLabel.text = "Logged out"
-        self.performSegueWithIdentifier("showLoginVC", sender: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
     
     
@@ -72,13 +72,4 @@ class ProfileViewController: UIViewController
     }
     
     
-}
-
-
-func mydelay(#seconds:Double, completion:()->()) {
-    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64( Double(NSEC_PER_SEC) * seconds ))
-    
-    dispatch_after(popTime, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
-        completion()
-    }
 }

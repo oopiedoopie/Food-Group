@@ -1,9 +1,8 @@
 //
 //  SelectSingleViewController.swift
-//  SwiftParseChat
+//  FoodGroup
 //
-//  Created by Jesse Hu on 3/5/15.
-//  Copyright (c) 2015 Jesse Hu. All rights reserved.
+//  Credit to Jesse Hu SwiftParseChat
 //
 
 import UIKit
@@ -51,9 +50,6 @@ class SelectMultipleViewController: UITableViewController {
     
     // MARK: - User actions
     
-    @IBAction func cancelButtonPressed(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     
     @IBAction func doneButtonPressed(sender: UIBarButtonItem) {
         if self.selection.count == 0 {
@@ -104,6 +100,11 @@ class SelectMultipleViewController: UITableViewController {
         return cell
     }
     
+    
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     // MARK: - Table view delegate
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -121,6 +122,8 @@ class SelectMultipleViewController: UITableViewController {
         
         self.tableView.reloadData()
     }
+    
+    
     
     deinit{
         println("select multiple was deninitialized")
