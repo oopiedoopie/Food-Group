@@ -28,6 +28,8 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     var userLocationManger = CLLocationManager()
     var data = MKMapItem()
     var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
+    var addCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
+
     var itemDict = NSDictionary()
     
   
@@ -41,9 +43,6 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         userLocationManger.desiredAccuracy = kCLLocationAccuracyBest;
         userLocationManger.distanceFilter = kCLDistanceFilterNone;
         userLocationManger.startUpdatingLocation()
-
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        navigationItem.rightBarButtonItem = addButton
         
         setupIcons()
         tableView.didMoveCellFromIndexPathToIndexPathBlock = {(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) -> Void in
@@ -52,12 +51,17 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         
         removeCellBlock = {(tableView: SBGestureTableView, cell: SBGestureTableViewCell) -> Void in
             let indexPath = tableView.indexPathForCell(cell)
-            
-            ProgressHUD.showSuccess("Removed cell for \n \(self.matchingItems[indexPath!.row].name)")
+            ProgressHUD.showError("Removed cell for \n \(self.matchingItems[indexPath!.row].name)")
             self.matchingItems.removeAtIndex(indexPath!.row)
             tableView.removeCell(cell, duration: 0.3, completion: nil)
         }
 
+        addCellBlock = {(tableView: SBGestureTableView, cell: SBGestureTableViewCell) -> Void in
+            let indexPath = tableView.indexPathForCell(cell)
+            ProgressHUD.showSuccess("Added cell for \n \(self.matchingItems[indexPath!.row].name)")
+            self.matchingItems.removeAtIndex(indexPath!.row)
+            tableView.removeCell(cell, duration: 0.3, completion: nil)
+        }
     }
     
     
@@ -97,12 +101,12 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let size = CGSizeMake(30, 30)
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! SBGestureTableViewCell
-        
-        cell.firstLeftAction = SBGestureTableViewCellAction(icon: checkIcon.imageWithSize(size), color: greenColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
-        cell.secondLeftAction = SBGestureTableViewCellAction(icon: closeIcon.imageWithSize(size), color: greenColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
+        cell.firstLeftAction = SBGestureTableViewCellAction(icon: checkIcon.imageWithSize(size), color: greenColor, fraction: 0.3, didTriggerBlock: addCellBlock)
+        cell.secondLeftAction = SBGestureTableViewCellAction(icon: closeIcon.imageWithSize(size), color: greenColor, fraction: 0.6, didTriggerBlock: addCellBlock)
         cell.firstRightAction = SBGestureTableViewCellAction(icon: composeIcon.imageWithSize(size), color: redColor, fraction: 0.3, didTriggerBlock: removeCellBlock)
         cell.secondRightAction = SBGestureTableViewCellAction(icon: clockIcon.imageWithSize(size), color: redColor, fraction: 0.6, didTriggerBlock: removeCellBlock)
-         itemDict = matchingItems[indexPath.row].placemark.addressDictionary
+        
+        itemDict = matchingItems[indexPath.row].placemark.addressDictionary
         var street : String = itemDict.valueForKey("Street") as! String
         var city : String = itemDict.valueForKey("City") as! String
         var state : String = itemDict.valueForKey("State") as! String
@@ -159,7 +163,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         search.startWithCompletionHandler({(response: MKLocalSearchResponse!, error: NSError!) in
             if (error != nil)
             {
-                //I done goof'd
+                //error
                 ProgressHUD.showError(error.description as String, interaction: true)
 
             }
