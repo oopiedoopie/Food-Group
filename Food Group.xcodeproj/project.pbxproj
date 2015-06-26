@@ -277,6 +277,8 @@
 		A1409DC01B3B1716008D8A16 /* Utility Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A159E16E1AF2BA770026B23A /* PushNotification.swift */,
+				A17A143B1B0AFCC7008289B8 /* DatePickerDialog.swift */,
 				A1D86D621AF679290041001D /* Alamofire.swift */,
 				A14C46311AF3022300588B14 /* Camera.swift */,
 				A159E16C1AF2B7300026B23A /* Constants.swift */,
@@ -353,7 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				A1409DC01B3B1716008D8A16 /* Utility Classes */,
-				A17A143B1B0AFCC7008289B8 /* DatePickerDialog.swift */,
 				A14C46331AF3023400588B14 /* AddressBookViewController.swift */,
 				A19CF2451AF1FBA80032755C /* AppDelegate.swift */,
 				A19B4C701AFA744E0011B552 /* SearchViewController.swift */,
@@ -364,7 +365,6 @@
 				A143BCF61B24EDDB00E73A23 /* PasswordResetViewController.swift */,
 				A159E16A1AF2B7220026B23A /* PrivateViewController.swift */,
 				A1C6B8D51AF7292100B08C1E /* ProfileViewController.swift */,
-				A159E16E1AF2BA770026B23A /* PushNotification.swift */,
 				A159E13E1AF2AFB10026B23A /* RegisterViewController.swift */,
 				A1216E0E1AFC095900562F97 /* TabBarController.swift */,
 				A1EF8D551B0146A100BADE65 /* LocationSearchViewController.swift */,

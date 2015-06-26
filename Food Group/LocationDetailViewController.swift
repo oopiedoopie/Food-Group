@@ -47,14 +47,28 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
         var state : String = itemDict.valueForKey("State") as! String
         var zip : String = itemDict.valueForKey("ZIP") as! String
         locationLabel.text = "\(street), \(city), \(state) \(zip)"
-        //TODO: change to call, or format number to (xxx) xxx-xxxx
+        //TODO: change to call, or format number to "(###) ###-####"
         phoneNumberButton.setTitle(self.formatPhoneNumber(self.itemDetail.phoneNumber) as String, forState: nil)
         
     }
     
     @IBAction func backButtonPressed(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popViewControllerAnimated(true)
     }
+    
+   
+    
+    @IBAction func callNumber(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(itemDetail.phoneNumber)")!)
+        
+    }
+    
+    
+    @IBAction func openURL(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "\(itemDetail.url)")!)
+    }
+    
+
     
     func formatPhoneNumber(itemNumber: String) -> NSString{
         var temp = itemNumber.substringWithRange(Range<String.Index>(start: advance(itemNumber.startIndex, 2), end: advance(itemNumber.endIndex, 0)))
@@ -85,18 +99,6 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
         return formattedString
     }
     
-    
-    @IBAction func callNumber(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(itemDetail.phoneNumber)")!)
-        
-    }
-    @IBAction func openURL(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "\(itemDetail.url)")!)
-    }
-    
-
-    
- 
     
     override func didReceiveMemoryWarning() {
         //

@@ -118,12 +118,12 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         //cell.distanceLabel.text = "\(distanceInMiles.string(2)) miles away"
         
         let item = matchingItems[indexPath.row] as MKMapItem
-        cell.textLabel!.text = item.name
+        cell.textLabel!.text = item.name + " - \(street)" +  " \(city)" + " \(state)" + " \(zip)"
         return cell
     }
     
     
-     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         data = self.matchingItems[indexPath.row]
         self.performSegueWithIdentifier("showDetail", sender: self.view)
         println("row \(indexPath.row)")
@@ -148,7 +148,8 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        
+        //clear item array for new searches, also clears tableview of old search items
+        matchingItems.removeAll(keepCapacity: false)
         let locationSpan = MKCoordinateSpanMake(0.5, 0.5)
         var coordinate = CLLocationCoordinate2DMake(userLocationManger.location.coordinate.latitude, userLocationManger.location.coordinate.longitude)
         let userRegion = MKCoordinateRegionMake(coordinate, locationSpan)

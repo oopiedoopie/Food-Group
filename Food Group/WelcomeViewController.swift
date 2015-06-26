@@ -19,10 +19,9 @@ class WelcomeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         //check to see if user is authenticated with Parse, works for Parse and Facebook
-        
         if (PFUser.currentUser()?.isAuthenticated() == true){
             println("user is authenticated")
-              //we have to async because it happens too fast
+              //run asynchronously because it happens too fast
             dispatch_async(dispatch_get_main_queue()) {
                 self.performSegueWithIdentifier("showProfileVC", sender: nil)
             }

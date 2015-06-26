@@ -50,7 +50,10 @@ class AddressBookViewController: UITableViewController, UIActionSheetDelegate, M
                 self.users1.removeAll(keepCapacity: false)
                 if let contacts = contacts as? [APContact] {
                     for contact in contacts {
+                        //check for contacts that don't have a first name, still shows nil for last name
+                        if let fname = contact.firstName{
                         self.users1.append(contact)
+                        }
                     }
                     self.loadUsers()
                 } else if error != nil {
