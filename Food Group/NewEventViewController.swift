@@ -6,10 +6,11 @@
 //  Copyright (c) 2015 Oopie Doopie. All rights reserved.
 //
 
+import Parse
 import Foundation
 import UIKit
 
-class NewEventViewController: UIViewController, UITextFieldDelegate {
+class NewEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     
@@ -17,20 +18,43 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var eventTitleTextField: UITextField!
     @IBOutlet weak var startTimeTextField: UIButton!
     @IBOutlet weak var endTimeTextField: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Varibales
     var datePicker = DatePickerDialog()
     var startTime = NSDate()
     var endTime = NSDate()
-    
+    var users = [PFUser]()
+    var selection = [String]()
+    var delegate: SelectMultipleViewControllerDelegate!
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        var tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-        self.view.addGestureRecognizer(tap)
-        eventTitleTextField.delegate = self
+        //This stops dismisskeyboard reconizer from interfering with the tableview selections
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        tapRecognizer.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapRecognizer)
+        self.tableView.delegate = self
+        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        loadUsers()
     }
     
+    func loadUsers() {
+        let user = PFUser.currentUser()
+        var query = PFQuery(className: PF_USER_CLASS_NAME)
+        query.whereKey(PF_USER_OBJECTID, notEqualTo: user!.objectId!)
+        query.orderByAscending(PF_USER_FULLNAME)
+        query.limit = 1000
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                self.users.removeAll(keepCapacity: false)
+                self.users += objects as! [PFUser]!
+                self.tableView.reloadData()
+            } else {
+                ProgressHUD.showError("Network error")
+            }
+        }
+    }
     
     
     //MARK: - Actions
@@ -79,15 +103,68 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         timeFormatter.dateFormat = "h:mm a"
         
         var time = "\(dateFormatter.stringFromDate(eventTime)), \(timeFormatter.stringFromDate(eventTime))"
-        println(eventTime)
         return time
     }
     
-    //MARK: - Style
     
-    func DismissKeyboard(){
-        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+   
+    // MARK: - TableView Methods
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.users.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        
+        let user = self.users[indexPath.row]
+        cell.textLabel?.text = user[PF_USER_FULLNAME] as? String
+        
+        let selected = contains(self.selection, user.objectId!)
+        cell.accessoryType = selected ? UITableViewCellAccessoryType.Checkmark : UITableViewCellAccessoryType.None
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let user = self.users[indexPath.row]
+        let selected = contains(self.selection, user.objectId!)
+        if selected {
+            if let index = find(self.selection, user.objectId!) {
+                self.selection.removeAtIndex(index)
+            }
+        } else {
+            self.selection.append(user.objectId!)
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    
+    //MARK: - Actions
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    @IBAction func createNewGroup(sender: AnyObject) {
+        for user in selection{
+            println(user)
+        }
+        println()
+    }
+    
+    
+    
+    //MARK: - Helper Methods
+    func dismissKeyboard() {
         self.view.endEditing(true)
+
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
@@ -98,11 +175,8 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         eventTitleTextField.resignFirstResponder()
         return true;
     }
-    
-    
-    deinit{
-        println("NewEventController deinit")
-    }
 
-   
+    deinit{
+        println("NewEventViewController was deninitialized")
+    }
 }

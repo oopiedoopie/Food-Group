@@ -1,5 +1,5 @@
 //
-//  SelectSingleViewController.swift
+//  SelectMultipleViewController.swift
 //  FoodGroup
 //
 //  Credit to Jesse Hu SwiftParseChat

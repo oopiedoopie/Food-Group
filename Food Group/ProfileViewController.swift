@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     //MARK: - Class Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
         
@@ -91,6 +91,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         println("You selected cell #\(indexPath.row)!")
     }
+    
     
     //MARK: - Helper methods
 

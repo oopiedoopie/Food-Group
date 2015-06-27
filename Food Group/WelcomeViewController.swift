@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
- 
 
 
 class WelcomeViewController: UIViewController {

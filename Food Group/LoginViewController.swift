@@ -23,8 +23,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard"))
         self.emailField.delegate = self
         self.passwordField.delegate = self
-        self.navigationItem.hidesBackButton = true;
-        self.navigationController!.navigationItem.hidesBackButton = true;
+        self.passwordField.secureTextEntry = true
+        self.navigationItem.hidesBackButton = true
+        self.navigationController!.navigationItem.hidesBackButton = true
    
     }
     

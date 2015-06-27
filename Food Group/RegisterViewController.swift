@@ -23,6 +23,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.nameField.delegate = self
         self.emailField.delegate = self
         self.passwordField.delegate = self
+        self.passwordField.secureTextEntry = true
         swipeRec.addTarget(self, action: "swipeToPopView")
         self.view.addGestureRecognizer(swipeRec)
     }
