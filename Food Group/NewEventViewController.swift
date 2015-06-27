@@ -31,9 +31,7 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         eventTitleTextField.delegate = self
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+    
     
     //MARK: - Actions
     @IBAction func startTimeTouched(sender: AnyObject)
@@ -81,15 +79,20 @@ class NewEventViewController: UIViewController, UITextFieldDelegate {
         timeFormatter.dateFormat = "h:mm a"
         
         var time = "\(dateFormatter.stringFromDate(eventTime)), \(timeFormatter.stringFromDate(eventTime))"
+        println(eventTime)
         return time
     }
     
+    //MARK: - Style
     
     func DismissKeyboard(){
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         self.view.endEditing(true)
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         eventTitleTextField.resignFirstResponder()

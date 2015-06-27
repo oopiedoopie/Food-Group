@@ -90,7 +90,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             if error == nil {
                 PushNotication.parsePushUserAssign()
                 ProgressHUD.showSuccess("Succeeded.")
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("showMainNavVC", sender: nil)
             } else {
                 if let userInfo = error!.userInfo {
                     ProgressHUD.showError(userInfo["error"] as! String)
@@ -104,7 +104,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         return UIStatusBarStyle.LightContent;
     }
     
-    //pops current controller
+    //pops current controller on swipe
     func swipeToPopView(){
         self.navigationController?.popViewControllerAnimated(true)
     }

@@ -30,6 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        //sets text input on email field
         self.emailField.becomeFirstResponder()
     }
     
@@ -73,7 +74,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if error == nil {
                 PushNotication.parsePushUserAssign()
                 ProgressHUD.showSuccess("User logged in")
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("showProfileVC", sender: nil)
             } else {
                 if let info = error!.userInfo {
                     ProgressHUD.showError(info["error"] as! String)
