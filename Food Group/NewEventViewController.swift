@@ -153,10 +153,20 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     @IBAction func createNewGroup(sender: AnyObject) {
-        for user in selection{
-            println(user)
+        if let userID =  PFUser.currentUser()?.objectId!{
+        var group = PFObject(className: "Event")
+        //group.setObject(userID, forKey: "Owner")
+        group["Owner"] = PFObject(withoutDataWithClassName:"Post", objectId: userID)
+        group.setObject(eventTitleTextField.text as String, forKey: "eventTitle")
+        group.setObject(startTime, forKey: "eventStart")
+        group.setObject(endTime, forKey: "eventEnd")
+        group.setObject(selection, forKey: "Users")
+        ProgressHUD.showSuccess("Group created!")
+        group.saveInBackground()
         }
-        println()
+        else {
+          ProgressHUD.showError("Failed to create group")
+        }
     }
     
     

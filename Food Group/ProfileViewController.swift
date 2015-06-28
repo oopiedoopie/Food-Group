@@ -20,7 +20,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Variables
-    var events: [String]  = ["one", "two", "three"]
+    var events:[PFObject] = []
     
     
     //MARK: - Class Methods
@@ -29,6 +29,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
+       
+        var query = PFQuery(className:"Event")
+        query.getObjectInBackgroundWithId("RBzjdnKuzU") {
+            (eventTitle: PFObject?, error: NSError?) -> Void in
+            if error == nil && eventTitle != nil {
+                println(eventTitle)
+            } else {
+                println(error)
+            }
+        }
+        
         
         if let user = PFUser.currentUser()
         {
@@ -44,7 +55,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    
+    func loadUsers() {
+        let user = PFUser.currentUser()
+        let userID =  PFUser.currentUser()?.objectId!
+        var query = PFQuery(className: PF_EVENT_CLASS_NAME)
+        query.whereKey("I91eH27itn", equalTo: PF_EVENT_ID)
+        query.orderByAscending(PF_EVENT_TITLE)
+        query.limit = 1000
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil {
+                self.events.removeAll(keepCapacity: false)
+                self.events += objects as! [PFObject]!
+                self.tableView.reloadData()
+            } else {
+                ProgressHUD.showError("Network error")
+            }
+        }
+        for event in events{
+            println(event.objectId)
+        }
+    }
+
     
     //log out user from Parse, set default values, switch to login view
     @IBAction func logOutUser(sender: AnyObject)
@@ -84,7 +115,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        cell.textLabel?.text = self.events[indexPath.row]
+        //cell.textLabel?.text = self.events[indexPath.row]
         return cell
     }
     
