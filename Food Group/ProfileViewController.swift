@@ -30,17 +30,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
        
-        var query = PFQuery(className:"Event")
-        query.getObjectInBackgroundWithId("RBzjdnKuzU") {
-            (eventTitle: PFObject?, error: NSError?) -> Void in
-            if error == nil && eventTitle != nil {
-                println(eventTitle)
-            } else {
-                println(error)
-            }
-        }
-        
-        
+       loadEvents()
         if let user = PFUser.currentUser()
         {
            nameLabel.text = user[PF_USER_FULLNAME] as? String
@@ -55,11 +45,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func loadUsers() {
-        let user = PFUser.currentUser()
+    func loadEvents() {
         let userID =  PFUser.currentUser()?.objectId!
         var query = PFQuery(className: PF_EVENT_CLASS_NAME)
-        query.whereKey("I91eH27itn", equalTo: PF_EVENT_ID)
+        query.whereKey(PF_EVENT_ID, containsString: userID)
         query.orderByAscending(PF_EVENT_TITLE)
         query.limit = 1000
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -69,6 +58,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.tableView.reloadData()
             } else {
                 ProgressHUD.showError("Network error")
+                println(error?.description)
             }
         }
         for event in events{
