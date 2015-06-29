@@ -12,14 +12,14 @@ import MapKit
 
 class LocationDetailViewController: UIViewController, UITextFieldDelegate {
     
-    //outlets to storyboard
+    //MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var phoneNumberButton: UIButton!
     @IBOutlet weak var urlButton: UIButton!
     
-    //variables
+      //MARK: - Variables
     var userLocationManger = CLLocationManager()
     var itemDetail : MKMapItem = MKMapItem()
     var itemDict = NSDictionary()
@@ -29,14 +29,14 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let locationSpan = MKCoordinateSpanMake(1.0, 1.0)
+        let locationSpan = MKCoordinateSpanMake(0.05, 0.05)
         var coordinate = CLLocationCoordinate2DMake(userLocationManger.location.coordinate.latitude, userLocationManger.location.coordinate.longitude)
         let userRegion = MKCoordinateRegionMake(coordinate, locationSpan)
         mapView.setRegion(userRegion, animated: true)
         mapView.showsUserLocation = true
+        self.mapView.setUserTrackingMode(MKUserTrackingMode.Follow, animated: true)
         mapView.addAnnotation(itemDetail.placemark)
         nameLabel.text = itemDetail.name
-        
         
         //create a dictionary to load address data
         itemDict = itemDetail.placemark.addressDictionary
@@ -52,6 +52,7 @@ class LocationDetailViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //MARK: - Button Actions
     @IBAction func backButtonPressed(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }

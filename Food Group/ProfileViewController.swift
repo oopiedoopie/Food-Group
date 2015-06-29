@@ -29,11 +29,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
-        //loadEvents()
+        
         if let user = PFUser.currentUser()
         {
            nameLabel.text = user[PF_USER_FULLNAME] as? String
            loadUserImage(user)
+            loadEvents(user)
         }
         else
         {
@@ -44,10 +45,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    func loadEvents() {
-        let userID =  PFUser.currentUser()?.objectId!
+    func loadEvents(user: PFUser) {
+        
         var query = PFQuery(className: PF_EVENT_CLASS_NAME)
-        query.whereKey(PF_EVENT_ID, containsString: userID)
+        query.whereKey(user.objectId! , containsString: PF_EVENT_OWNER)
         query.orderByAscending(PF_EVENT_TITLE)
         query.limit = 1000
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -104,7 +105,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        //cell.textLabel?.text = self.events[indexPath.row]
+        cell.textLabel?.text = self.events[indexPath.row].objectForKey(PF_EVENT_TITLE) as? String
         return cell
     }
     

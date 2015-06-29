@@ -43,6 +43,10 @@ class PasswordResetViewController: UIViewController{
     }
     
     
+    @IBAction func cancelButtonPressed(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     //sets the status bar color to white
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent;

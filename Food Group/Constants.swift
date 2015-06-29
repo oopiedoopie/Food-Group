@@ -49,12 +49,11 @@ let PF_CHAT_CREATEDAT					= "createdAt"               //	Date
 
 /* Chat */
 let PF_EVENT_CLASS_NAME					= "Event"					//	Class name
-let PF_EVENT_ID                         = "objectID"					//	Pointer to User Class
-let PF_EVENT_START                      = "eventStart"                 //	String
-let PF_EVENT_END						= "eventEnd"					//	String
-let PF_EVENT_TITLE                      = "eventTitle"                 //	File
-let PF_EVENT_OWNER						= "Owner"                   //	File
-let PF_EVENT_USERS                      = "Users"                       //	Date
+let PF_EVENT_OWNER                      = "Owner"                   //	Pointer to User Class
+let PF_EVENT_START                      = "eventStart"              //	String
+let PF_EVENT_END						= "eventEnd"				//	String
+let PF_EVENT_TITLE                      = "eventTitle"              //	String
+let PF_EVENT_USERS                      = "Users"                   //	String
 
 /* Groups */
 let PF_GROUPS_CLASS_NAME				= "Groups"                  //	Class name

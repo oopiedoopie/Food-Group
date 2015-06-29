@@ -13,9 +13,14 @@ import MapKit
 class LocationSearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
+    //MARK: - Outlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: SBGestureTableView!
+    
+    //MARK: - Variables
     var objects = NSMutableArray()
+    var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
+    var addCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
     let checkIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let closeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
     let composeIcon = FAKIonIcons.ios7ComposeIconWithSize(30)
@@ -27,9 +32,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     var matchingItems : [MKMapItem] = [MKMapItem]()
     var userLocationManger = CLLocationManager()
     var data = MKMapItem()
-    var removeCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
-    var addCellBlock: ((SBGestureTableView, SBGestureTableViewCell) -> Void)!
-
+   
     var itemDict = NSDictionary()
     
   
@@ -118,7 +121,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         //cell.distanceLabel.text = "\(distanceInMiles.string(2)) miles away"
         
         let item = matchingItems[indexPath.row] as MKMapItem
-        cell.textLabel!.text = item.name + " - \(street)" +  " \(city)" + " \(state)" + " \(zip)"
+        cell.textLabel!.text = item.name + " - \(street)" +  " \(city)," + " \(state)" + " \(zip)"
         return cell
     }
     

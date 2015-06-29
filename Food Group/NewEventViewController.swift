@@ -26,7 +26,7 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
     var endTime = NSDate()
     var users = [PFUser]()
     var selection = [String]()
-    var delegate: SelectMultipleViewControllerDelegate!
+     var delegate: SelectMultipleViewControllerDelegate!
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -171,6 +171,10 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
             group.setObject(eventTitleTextField.text, forKey: PF_EVENT_TITLE)
             group.setObject(startTime, forKey: PF_EVENT_START)
             group.setObject(endTime, forKey: PF_EVENT_END)
+            
+            
+            //TODO: - Figure out how to populate an array of pointers in parse
+            // group[PF_EVENT_USERS] = PFObject(withoutDataWithClassName:"_User", objectId: selection[i])
             group.setObject(selection, forKey: PF_EVENT_USERS)
             ProgressHUD.showSuccess("Group created!")
             group.saveInBackground()
