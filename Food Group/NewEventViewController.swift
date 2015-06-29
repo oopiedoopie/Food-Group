@@ -36,8 +36,13 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
         self.view.addGestureRecognizer(tapRecognizer)
         self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        let bgTextColor : UIColor = UIColor(rgba: "#FFFFFF")
+        eventTitleTextField.attributedPlaceholder = NSAttributedString(string:eventTitleTextField.placeholder!,attributes: [NSForegroundColorAttributeName: bgTextColor])
+        
         loadUsers()
     }
+    
     
     func loadUsers() {
         let user = PFUser.currentUser()
@@ -57,16 +62,18 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    //MARK: - Actions
+    //MARK: - Date Set Functions
     @IBAction func startTimeTouched(sender: AnyObject)
     {
         DatePickerDialog().show(title: "DatePickerDialog", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .DateAndTime) {
             (date) -> Void in
+            self.startTimeTextField.setTitleColor(UIColor.greenColor(), forState: UIControlState.Normal)
             self.startTimeTextField.setTitle("\(self.formatDate(date))", forState: nil)
             self.startTime = (date)
             //autoset end date an hour later, but it can be manually moved to any time.
             self.endTime = (self.startTime.dateByAddingTimeInterval(1*60*60))
             self.endTimeTextField.setTitle("\(self.formatDate(self.endTime))", forState: nil)
+            self.endTimeTextField.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
         }
         self.startTimeTextField.resignFirstResponder()
     }
@@ -77,6 +84,7 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
         
         DatePickerDialog().show(title: "DatePickerDialog", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .DateAndTime) {
             (date) -> Void in
+            self.endTimeTextField.setTitleColor(UIColor.redColor(), forState: UIControlState.Normal)
             self.endTimeTextField.setTitle("\(self.formatDate(date))", forState: nil)
             self.endTime = (date)
         }
@@ -122,6 +130,7 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         
         let user = self.users[indexPath.row]
+        cell.textLabel?.textColor = UIColor(rgba: "#FD6C4E")
         cell.textLabel?.text = user[PF_USER_FULLNAME] as? String
         
         let selected = contains(self.selection, user.objectId!)
@@ -152,19 +161,22 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    @IBAction func createNewGroup(sender: AnyObject) {
-        if let userID =  PFUser.currentUser()?.objectId!{
-        var group = PFObject(className: "Event")
-        //group.setObject(userID, forKey: "Owner")
-        group["Owner"] = PFObject(withoutDataWithClassName:"Post", objectId: userID)
-        group.setObject(eventTitleTextField.text as String, forKey: "eventTitle")
-        group.setObject(startTime, forKey: "eventStart")
-        group.setObject(endTime, forKey: "eventEnd")
-        group.setObject(selection, forKey: "Users")
-        ProgressHUD.showSuccess("Group created!")
-        group.saveInBackground()
-        }
-        else {
+    @IBAction func createNewGroup(sender: AnyObject)
+    {
+        if let userID =  PFUser.currentUser()?.objectId!
+        {
+            var group = PFObject(className: PF_EVENT_CLASS_NAME)
+            //creates a pointer to the objectID from the _User class 
+            group[PF_EVENT_OWNER] = PFObject(withoutDataWithClassName:"_User", objectId: userID)
+            group.setObject(eventTitleTextField.text, forKey: PF_EVENT_TITLE)
+            group.setObject(startTime, forKey: PF_EVENT_START)
+            group.setObject(endTime, forKey: PF_EVENT_END)
+            group.setObject(selection, forKey: PF_EVENT_USERS)
+            ProgressHUD.showSuccess("Group created!")
+            group.saveInBackground()
+            }
+                else
+            {
           ProgressHUD.showError("Failed to create group")
         }
     }

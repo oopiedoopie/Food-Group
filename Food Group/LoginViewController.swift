@@ -13,11 +13,14 @@ import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    //MARK: - Outlets
     @IBOutlet var emailField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
+    
+    //MARK: - Default Methods
      override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "dismissKeyboard"))
@@ -26,13 +29,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordField.secureTextEntry = true
         self.navigationItem.hidesBackButton = true
         self.navigationController!.navigationItem.hidesBackButton = true
-   
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         //sets text input on email field
-        self.emailField.becomeFirstResponder()
+        // self.emailField.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,6 +59,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.login();
     }
     
+    
+    //MARK: - Parse Login
     func login() {
         let email = emailField.text.lowercaseString
         let password = passwordField.text
@@ -84,6 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //MARK: - Facebook Login
     @IBAction func facebookLogin(sender: UIButton) {
         ProgressHUD.show("Signing in...", interaction: false)
         PFFacebookUtils.logInWithPermissions(["public_profile", "email", "user_friends"], block: { (user, error) -> Void in
@@ -190,6 +195,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //MARK: - Style Functions
     override func viewWillAppear(animated: Bool)
     {
         self.navigationController?.navigationBarHidden = true

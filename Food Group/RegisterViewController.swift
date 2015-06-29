@@ -26,6 +26,12 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         self.passwordField.secureTextEntry = true
         swipeRec.addTarget(self, action: "swipeToPopView")
         self.view.addGestureRecognizer(swipeRec)
+        
+        //test to change UITextField's placeholder font color
+        let bgTextColor : UIColor = UIColor(rgba: "#8000FF")
+        nameField.attributedPlaceholder = NSAttributedString(string:nameField.placeholder!,attributes: [NSForegroundColorAttributeName: bgTextColor])
+        passwordField.attributedPlaceholder = NSAttributedString(string:passwordField.placeholder!,attributes: [NSForegroundColorAttributeName: bgTextColor])
+        emailField.attributedPlaceholder = NSAttributedString(string:emailField.placeholder!,attributes: [NSForegroundColorAttributeName: bgTextColor])
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -86,7 +92,6 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
         user[PF_USER_FULLNAME] = name
         user[PF_USER_FULLNAME_LOWER] = name.lowercaseString
         
-        
         user.signUpInBackgroundWithBlock { (succeeded, error) -> Void in
             if error == nil {
                 PushNotication.parsePushUserAssign()
@@ -98,7 +103,7 @@ class RegisterViewController: UITableViewController, UITextFieldDelegate {
             }
             }
         }
-    }
+    }//ends func register
     
     //sets the status bar color to white
     override func preferredStatusBarStyle() -> UIStatusBarStyle {

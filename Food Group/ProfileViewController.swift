@@ -29,8 +29,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.delegate = self
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         userImage.layer.borderColor = UIColor.whiteColor().CGColor
-       
-       loadEvents()
+        //loadEvents()
         if let user = PFUser.currentUser()
         {
            nameLabel.text = user[PF_USER_FULLNAME] as? String

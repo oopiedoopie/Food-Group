@@ -2,8 +2,8 @@
 //  UIColorExtension.swift
 //  Food Group
 //
-//  Created by Eric Cauble on 6/7/15.
-//  Copyright (c) 2015 Oopie Doopie. All rights reserved.
+//   
+//  https://github.com/yeahdongcn/UIColor-Hex-Swift/blob/master/UIColorExtension.swift
 //
 
 import UIKit

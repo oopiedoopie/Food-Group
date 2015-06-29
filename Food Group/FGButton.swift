@@ -20,7 +20,7 @@ class FGButton: UIButton
         self.layer.shadowOffset = CGSize(width: 3.0, height: 2.0)
         self.layer.shadowRadius = 5.0
         self.layer.shadowColor = UIColor.blackColor().CGColor
-        self.layer.cornerRadius = 5
+        //self.layer.cornerRadius = 5
         
         
         
