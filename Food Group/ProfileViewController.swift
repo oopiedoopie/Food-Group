@@ -45,24 +45,31 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    
     func loadEvents(user: PFUser) {
         
-        var query = PFQuery(className: PF_EVENT_CLASS_NAME)
-        query.whereKey(user.objectId! , containsString: PF_EVENT_OWNER)
-        query.orderByAscending(PF_EVENT_TITLE)
-        query.limit = 1000
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+        var query = PFQuery(className:"Event")
+        //query.where
+        query.whereKey("Owner", equalTo: user.objectId!)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [AnyObject]?, error: NSError?) -> Void in
+            
             if error == nil {
-                self.events.removeAll(keepCapacity: false)
-                self.events += objects as! [PFObject]!
-                self.tableView.reloadData()
+                // The find succeeded.
+                println("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects as? [PFObject] {
+                    for object in objects {
+                        println(object.valueForKey("eventTitle"))
+                        self.events.append(object)
+                        self.tableView.reloadData()
+
+                    }
+                }
             } else {
-                ProgressHUD.showError("Network error")
-                println(error?.description)
+                // Log details of the failure
+                println("Error: \(error!) \(error!.userInfo!)")
             }
-        }
-        for event in events{
-            println(event.objectId)
         }
     }
 
@@ -106,13 +113,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         cell.textLabel?.text = self.events[indexPath.row].objectForKey(PF_EVENT_TITLE) as? String
+        
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
     }
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
     
     //MARK: - Helper methods
 

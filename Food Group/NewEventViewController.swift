@@ -167,7 +167,8 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
         {
             var group = PFObject(className: PF_EVENT_CLASS_NAME)
             //creates a pointer to the objectID from the _User class 
-            group[PF_EVENT_OWNER] = PFObject(withoutDataWithClassName:"_User", objectId: userID)
+            group.setObject(userID, forKey: PF_EVENT_OWNER)
+           // group[PF_EVENT_OWNER] = PFObject(withoutDataWithClassName:"_User", objectId: userID)
             group.setObject(eventTitleTextField.text, forKey: PF_EVENT_TITLE)
             group.setObject(startTime, forKey: PF_EVENT_START)
             group.setObject(endTime, forKey: PF_EVENT_END)
