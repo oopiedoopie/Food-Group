@@ -32,8 +32,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if let user = PFUser.currentUser()
         {
-           nameLabel.text = user[PF_USER_FULLNAME] as? String
-           loadUserImage(user)
+            nameLabel.text = user[PF_USER_FULLNAME] as? String
+            loadUserImage(user)
             loadEvents(user)
         }
         else
@@ -55,18 +55,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
             (objects: [AnyObject]?, error: NSError?) -> Void in
             
             if error == nil {
-                // The find succeeded.
-                println("Successfully retrieved \(objects!.count) scores.")
-                // Do something with the found objects
-                if let objects = objects as? [PFObject] {
+                // Found objects in query
+                 if let objects = objects as? [PFObject] {
                     for object in objects {
-                        println(object.valueForKey("eventTitle"))
                         self.events.append(object)
                         self.tableView.reloadData()
-
                     }
                 }
-            } else {
+            }
+            else
+            {
                 // Log details of the failure
                 println("Error: \(error!) \(error!.userInfo!)")
             }
@@ -105,6 +103,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     //MARK: - TableView methods
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.events.count;

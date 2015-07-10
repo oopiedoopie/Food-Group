@@ -1,3 +1,8 @@
+
+
+//DatePickerDialog is an iOS drop-in classe that displays an UIDatePicker within an UIAlertView.
+//https://github.com/squimer/DatePickerDialog-iOS-Swift
+
 import UIKit
 import QuartzCore
 

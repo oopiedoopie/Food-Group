@@ -27,7 +27,7 @@ class NewEventViewController: UIViewController, UITableViewDelegate, UITableView
     var endTime = NSDate()
     var users = [PFUser]()
     var selection = [String]()
-     var delegate: SelectMultipleViewControllerDelegate!
+    var delegate: SelectMultipleViewControllerDelegate!
     
     override func viewDidLoad(){
         super.viewDidLoad()
