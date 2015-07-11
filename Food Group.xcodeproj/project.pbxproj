@@ -56,6 +56,15 @@
 		A1A3A90C1B0988C10041B932 /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A3A90B1B0988C10041B932 /* NewEventViewController.swift */; };
 		A1C6B8D41AF726BE00B08C1E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C6B8D31AF726BE00B08C1E /* MapKit.framework */; };
 		A1C6B8D61AF7292100B08C1E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C6B8D51AF7292100B08C1E /* ProfileViewController.swift */; };
+		A1CD772F1B5063B800A93FCA /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CD772E1B5063B800A93FCA /* WatchKit.framework */; };
+		A1CD77311B50653300A93FCA /* WatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD77301B50653300A93FCA /* WatchViewController.swift */; };
+		A1CD773C1B50677D00A93FCA /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD773B1B50677D00A93FCA /* InterfaceController.swift */; };
+		A1CD773E1B50677D00A93FCA /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD773D1B50677D00A93FCA /* NotificationController.swift */; };
+		A1CD77401B50677D00A93FCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1CD773F1B50677D00A93FCA /* Images.xcassets */; };
+		A1CD77441B50677D00A93FCA /* Food Group WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = A1CD77431B50677D00A93FCA /* Food Group WatchKit App.app */; };
+		A1CD774C1B50677D00A93FCA /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1CD774A1B50677D00A93FCA /* Interface.storyboard */; };
+		A1CD774E1B50677D00A93FCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1CD774D1B50677D00A93FCA /* Images.xcassets */; };
+		A1CD77521B50677D00A93FCA /* Food Group WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A1CD77361B50677C00A93FCA /* Food Group WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A1D86D581AF6774F0041001D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D86D541AF6774F0041001D /* Parse.framework */; };
 		A1D86D591AF6774F0041001D /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D86D551AF6774F0041001D /* ParseCrashReporting.framework */; };
 		A1D86D5A1AF6774F0041001D /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1D86D561AF6774F0041001D /* ParseFacebookUtils.framework */; };
@@ -123,9 +132,34 @@
 			remoteGlobalIDString = A19CF23F1AF1FBA80032755C;
 			remoteInfo = "Food Group";
 		};
+		A1CD77451B50677D00A93FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A19CF2381AF1FBA80032755C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1CD77421B50677D00A93FCA;
+			remoteInfo = "Food Group WatchKit App";
+		};
+		A1CD774F1B50677D00A93FCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A19CF2381AF1FBA80032755C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1CD77351B50677C00A93FCA;
+			remoteInfo = "Food Group WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		A1CD77511B50677D00A93FCA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A1CD77521B50677D00A93FCA /* Food Group WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A1D74D981AFA6583003FA805 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,6 +236,18 @@
 		A1A3A90B1B0988C10041B932 /* NewEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		A1C6B8D31AF726BE00B08C1E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A1C6B8D51AF7292100B08C1E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A1CD772E1B5063B800A93FCA /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		A1CD77301B50653300A93FCA /* WatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchViewController.swift; sourceTree = "<group>"; };
+		A1CD77361B50677C00A93FCA /* Food Group WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Food Group WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1CD77391B50677D00A93FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1CD773A1B50677D00A93FCA /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		A1CD773B1B50677D00A93FCA /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		A1CD773D1B50677D00A93FCA /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		A1CD773F1B50677D00A93FCA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A1CD77431B50677D00A93FCA /* Food Group WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Food Group WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1CD77491B50677D00A93FCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1CD774B1B50677D00A93FCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		A1CD774D1B50677D00A93FCA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A1D86D541AF6774F0041001D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A1D86D551AF6774F0041001D /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
 		A1D86D561AF6774F0041001D /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
@@ -238,6 +284,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CD772F1B5063B800A93FCA /* WatchKit.framework in Frameworks */,
 				A15769961AF297B600B2A1AC /* Accounts.framework in Frameworks */,
 				A1D86D591AF6774F0041001D /* ParseCrashReporting.framework in Frameworks */,
 				A1D86D5B1AF6774F0041001D /* ParseUI.framework in Frameworks */,
@@ -262,6 +309,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A19CF2551AF1FBA80032755C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1CD77331B50677C00A93FCA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -332,6 +386,8 @@
 			isa = PBXGroup;
 			children = (
 				A162EFD11AFBFEEC00FA79F4 /* Alamofire.xcodeproj */,
+				A1CD77371B50677D00A93FCA /* Food Group WatchKit Extension */,
+				A1CD77471B50677D00A93FCA /* Food Group WatchKit App */,
 				A19CF2901AF1FF170032755C /* Frameworks */,
 				A19CF2421AF1FBA80032755C /* Food Group */,
 				A19CF25B1AF1FBA80032755C /* Food GroupTests */,
@@ -344,6 +400,8 @@
 			children = (
 				A19CF2401AF1FBA80032755C /* Food Group.app */,
 				A19CF2581AF1FBA80032755C /* Food GroupTests.xctest */,
+				A1CD77361B50677C00A93FCA /* Food Group WatchKit Extension.appex */,
+				A1CD77431B50677D00A93FCA /* Food Group WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -367,6 +425,7 @@
 				A1EF8D551B0146A100BADE65 /* LocationSearchViewController.swift */,
 				A1EF8D571B0146BA00BADE65 /* LocationDetailViewController.swift */,
 				A1E84CD21AF2DDC30003AE8D /* WelcomeViewController.swift */,
+				A1CD77301B50653300A93FCA /* WatchViewController.swift */,
 				A19CF24C1AF1FBA80032755C /* Main.storyboard */,
 				A19CF2511AF1FBA80032755C /* LaunchScreen.xib */,
 				A19CF2431AF1FBA80032755C /* Supporting Files */,
@@ -405,6 +464,7 @@
 		A19CF2901AF1FF170032755C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1CD772E1B5063B800A93FCA /* WatchKit.framework */,
 				A1E642191B01500A00E3BC05 /* SBGestureTableView */,
 				A1EF8D791B014A2400BADE65 /* FontKitAwesome */,
 				A1C6B8D31AF726BE00B08C1E /* MapKit.framework */,
@@ -431,6 +491,44 @@
 				A19CF28C1AF1FE7A0032755C /* libz.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1CD77371B50677D00A93FCA /* Food Group WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A1CD773B1B50677D00A93FCA /* InterfaceController.swift */,
+				A1CD773D1B50677D00A93FCA /* NotificationController.swift */,
+				A1CD773F1B50677D00A93FCA /* Images.xcassets */,
+				A1CD77381B50677D00A93FCA /* Supporting Files */,
+			);
+			path = "Food Group WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		A1CD77381B50677D00A93FCA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1CD77391B50677D00A93FCA /* Info.plist */,
+				A1CD773A1B50677D00A93FCA /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A1CD77471B50677D00A93FCA /* Food Group WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				A1CD774A1B50677D00A93FCA /* Interface.storyboard */,
+				A1CD774D1B50677D00A93FCA /* Images.xcassets */,
+				A1CD77481B50677D00A93FCA /* Supporting Files */,
+			);
+			path = "Food Group WatchKit App";
+			sourceTree = "<group>";
+		};
+		A1CD77481B50677D00A93FCA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A1CD77491B50677D00A93FCA /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A1E642191B01500A00E3BC05 /* SBGestureTableView */ = {
@@ -495,10 +593,12 @@
 				A19CF23E1AF1FBA80032755C /* Resources */,
 				A14C462E1AF2EE7000588B14 /* Headers */,
 				A1D74D981AFA6583003FA805 /* Embed Frameworks */,
+				A1CD77511B50677D00A93FCA /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A1CD77501B50677D00A93FCA /* PBXTargetDependency */,
 			);
 			name = "Food Group";
 			productName = "Food Group";
@@ -522,6 +622,39 @@
 			productName = "Food GroupTests";
 			productReference = A19CF2581AF1FBA80032755C /* Food GroupTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A1CD77351B50677C00A93FCA /* Food Group WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1CD77561B50677D00A93FCA /* Build configuration list for PBXNativeTarget "Food Group WatchKit Extension" */;
+			buildPhases = (
+				A1CD77321B50677C00A93FCA /* Sources */,
+				A1CD77331B50677C00A93FCA /* Frameworks */,
+				A1CD77341B50677C00A93FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1CD77461B50677D00A93FCA /* PBXTargetDependency */,
+			);
+			name = "Food Group WatchKit Extension";
+			productName = "Food Group WatchKit Extension";
+			productReference = A1CD77361B50677C00A93FCA /* Food Group WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		A1CD77421B50677D00A93FCA /* Food Group WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1CD77531B50677D00A93FCA /* Build configuration list for PBXNativeTarget "Food Group WatchKit App" */;
+			buildPhases = (
+				A1CD77411B50677D00A93FCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Food Group WatchKit App";
+			productName = "Food Group WatchKit App";
+			productReference = A1CD77431B50677D00A93FCA /* Food Group WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
 		};
 /* End PBXNativeTarget section */
 
@@ -548,6 +681,14 @@
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = A19CF23F1AF1FBA80032755C;
 					};
+					A1CD77351B50677C00A93FCA = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 27XXJG8HK4;
+					};
+					A1CD77421B50677D00A93FCA = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 27XXJG8HK4;
+					};
 				};
 			};
 			buildConfigurationList = A19CF23B1AF1FBA80032755C /* Build configuration list for PBXProject "Food Group" */;
@@ -571,6 +712,8 @@
 			targets = (
 				A19CF23F1AF1FBA80032755C /* Food Group */,
 				A19CF2571AF1FBA80032755C /* Food GroupTests */,
+				A1CD77351B50677C00A93FCA /* Food Group WatchKit Extension */,
+				A1CD77421B50677D00A93FCA /* Food Group WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -630,6 +773,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1CD77341B50677C00A93FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1CD77401B50677D00A93FCA /* Images.xcassets in Resources */,
+				A1CD77441B50677D00A93FCA /* Food Group WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1CD77411B50677D00A93FCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1CD774C1B50677D00A93FCA /* Interface.storyboard in Resources */,
+				A1CD774E1B50677D00A93FCA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -657,6 +818,7 @@
 				A159E1541AF2B1C50026B23A /* APPhoneWithLabel.m in Sources */,
 				A1EF8D6A1B014A1700BADE65 /* FAKFontAwesome.m in Sources */,
 				A19B4C741AFA744E0011B552 /* SelectMultipleViewController.swift in Sources */,
+				A1CD77311B50653300A93FCA /* WatchViewController.swift in Sources */,
 				A1D86D631AF679290041001D /* Alamofire.swift in Sources */,
 				A159E1441AF2B0180026B23A /* ProgressHUD.m in Sources */,
 				A1EF8D561B0146A100BADE65 /* LocationSearchViewController.swift in Sources */,
@@ -689,6 +851,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1CD77321B50677C00A93FCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1CD773E1B50677D00A93FCA /* NotificationController.swift in Sources */,
+				A1CD773C1B50677D00A93FCA /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -696,6 +867,16 @@
 			isa = PBXTargetDependency;
 			target = A19CF23F1AF1FBA80032755C /* Food Group */;
 			targetProxy = A19CF2591AF1FBA80032755C /* PBXContainerItemProxy */;
+		};
+		A1CD77461B50677D00A93FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1CD77421B50677D00A93FCA /* Food Group WatchKit App */;
+			targetProxy = A1CD77451B50677D00A93FCA /* PBXContainerItemProxy */;
+		};
+		A1CD77501B50677D00A93FCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1CD77351B50677C00A93FCA /* Food Group WatchKit Extension */;
+			targetProxy = A1CD774F1B50677D00A93FCA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -714,6 +895,14 @@
 				A19CF2521AF1FBA80032755C /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		A1CD774A1B50677D00A93FCA /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A1CD774B1B50677D00A93FCA /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -755,7 +944,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -793,7 +982,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -871,6 +1060,68 @@
 			};
 			name = Release;
 		};
+		A1CD77541B50677D00A93FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Food_Group_WatchKit_Extension;
+				INFOPLIST_FILE = "Food Group WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		A1CD77551B50677D00A93FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				IBSC_MODULE = Food_Group_WatchKit_Extension;
+				INFOPLIST_FILE = "Food Group WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		A1CD77571B50677D00A93FCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Cauble (455VRVZGSF)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Food Group WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A1CD77581B50677D00A93FCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Eric Cauble (455VRVZGSF)";
+				INFOPLIST_FILE = "Food Group WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -900,6 +1151,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A1CD77531B50677D00A93FCA /* Build configuration list for PBXNativeTarget "Food Group WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1CD77541B50677D00A93FCA /* Debug */,
+				A1CD77551B50677D00A93FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A1CD77561B50677D00A93FCA /* Build configuration list for PBXNativeTarget "Food Group WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1CD77571B50677D00A93FCA /* Debug */,
+				A1CD77581B50677D00A93FCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

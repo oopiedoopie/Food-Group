@@ -43,10 +43,14 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
         tableView.dataSource = self
         tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
 
+        if CLLocationManager.locationServicesEnabled() {
+
         userLocationManger.desiredAccuracy = kCLLocationAccuracyBest;
         userLocationManger.distanceFilter = kCLDistanceFilterNone;
         userLocationManger.startUpdatingLocation()
-        
+        }else{
+            ProgressHUD.show("Location services are disabled")
+        }
         setupIcons()
         tableView.didMoveCellFromIndexPathToIndexPathBlock = {(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) -> Void in
             self.objects.exchangeObjectAtIndex(toIndexPath.row, withObjectAtIndex: fromIndexPath.row)
@@ -137,18 +141,16 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
     // MARK: - Search functions
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        //self.tableView.reloadData()
- 
         //TODO: - Fill the tableview with results after three characters have been entered
         if(count(searchBar.text) < 3){
             
-            //tableView.reloadData()
-        }
+         }
         else{
             
         }
     }
     
+  
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         //clear item array for new searches, also clears tableview of old search items
@@ -213,7 +215,7 @@ class LocationSearchViewController: UIViewController, UITableViewDataSource, UIT
 // MARK: - Extensions
 
 //get string value of double without casting
-extension String {
+private extension String {
     var doubleValue: Double {
         return (self as NSString).doubleValue
     }
